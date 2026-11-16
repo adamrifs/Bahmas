@@ -1,0 +1,227 @@
+/* Homepage additions to the existing LogiXpress theme. */
+.bahmas-home #content { color: #62666c; }
+.bahmas-section-heading { margin-bottom: 44px; }
+.bahmas-section-heading p { margin-bottom: 0; }
+.bahmas-home .subtitle { font-size: 14px; letter-spacing: .1em; }
+
+.bahmas-hero { padding: 0; background: #101820; }
+.bahmas-hero-image, .bahmas-hero::before {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.bahmas-hero-image { object-fit: cover; object-position: 65% center; }
+.bahmas-hero::before {
+    content: "";
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(9,18,27,.75), rgba(9,18,27,.12)),
+                linear-gradient(0deg, rgba(9,18,27,.9), transparent 55%);
+}
+.bahmas-hero-copy { padding: 195px 0 85px; max-width: 780px; }
+.bahmas-hero-copy h1 {
+    font-size: clamp(44px, 4.5vw, 68px);
+    line-height: 1.12;
+    margin-bottom: 26px;
+}
+.bahmas-hero-copy p {
+    max-width: 570px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 30px;
+}
+.bahmas-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.bahmas-home .btn-main { padding: 10px 28px; }
+.bahmas-hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    list-style: none;
+    padding: 28px 0 32px;
+    margin: 0;
+    border-top: 1px solid rgba(255,255,255,.3);
+}
+.bahmas-hero-highlights h2 {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.bahmas-hero-highlights p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.78);
+    margin: 0;
+}
+
+.bahmas-highlight-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 440px;
+    isolation: isolate;
+}
+.bahmas-highlight-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgba(9,18,27,.94), rgba(9,18,27,.18) 85%);
+}
+.bahmas-highlight-card > img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bahmas-highlight-copy { width: 100%; padding: 32px; }
+.bahmas-highlight-copy h2 {
+    border-top: 1px solid rgba(255,255,255,.45);
+    padding-top: 20px;
+    font-size: 27px;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.bahmas-highlight-copy p {
+    margin: 0;
+    color: rgba(255,255,255,.85);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.bahmas-service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+}
+.bahmas-service-card:hover { color: inherit; }
+.bahmas-service-image { aspect-ratio: 4 / 3; }
+.bahmas-service-image img { width: 100%; height: 100%; object-fit: cover; }
+.bahmas-service-copy {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 24px;
+}
+.bahmas-service-copy h3, .bahmas-feature h3 { font-size: 20px; line-height: 1.4; }
+.bahmas-service-copy p, .bahmas-feature p { font-size: 15px; line-height: 1.8; }
+.bahmas-read-more {
+    margin-top: auto;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+.bahmas-read-arrow { margin-left: 8px; }
+.bahmas-check {
+    display: block;
+    width: 22px;
+    height: 12px;
+    border-left: 3px solid currentColor;
+    border-bottom: 3px solid currentColor;
+    transform: translateY(-3px) rotate(-45deg);
+}
+.bahmas-feature { display: flex; align-items: flex-start; gap: 22px; }
+.bahmas-feature-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: #101010;
+    color: #fff;
+    font-size: 26px;
+}
+.bahmas-feature p { margin-bottom: 0; }
+
+.bahmas-faq-item {
+    background: #f4f4f4;
+    color: #181d24;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+.bahmas-faq-item[open] { background: var(--primary-color); color: #fff; }
+.bahmas-faq-item summary {
+    position: relative;
+    padding: 24px 68px 24px 28px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    list-style: none;
+    cursor: pointer;
+}
+.bahmas-faq-item summary::-webkit-details-marker { display: none; }
+.bahmas-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 28px;
+    top: 22px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.bahmas-faq-item[open] summary::after { content: "\2212"; }
+.bahmas-faq-answer { padding: 0 68px 26px 28px; font-size: 15px; line-height: 1.85; }
+.bahmas-faq-answer p { margin: 0; }
+.bahmas-faq-answer a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
+
+.bahmas-quote {
+    background: linear-gradient(90deg, rgba(9,18,27,.91), rgba(9,18,27,.7)),
+                url('../images/background/1.webp') center / cover;
+    padding: 85px 0;
+}
+.bahmas-quote h2 { max-width: 800px; font-size: clamp(32px, 4vw, 48px); }
+.bahmas-quote p { max-width: 680px; margin-bottom: 0; color: rgba(255,255,255,.85); }
+.bahmas-home :is(a, summary, button):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
+.bahmas-home .bahmas-faq-item[open] summary:focus-visible { outline-color: #181d24; }
+.bahmas-skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10000;
+    background: #fff;
+    color: #181d24;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transform: translateY(-160%);
+}
+.bahmas-skip-link:focus { transform: translateY(0); }
+
+@media (max-width: 1199px) {
+    .bahmas-highlight-copy { padding: 26px; }
+    .bahmas-highlight-copy h2 { font-size: 24px; }
+    .bahmas-feature { gap: 16px; }
+    .bahmas-feature-icon { flex-basis: 52px; height: 52px; font-size: 22px; }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .bahmas-home main > section > .container { padding-right: 24px; padding-left: 24px; }
+}
+@media (max-width: 991px) {
+    .bahmas-hero { margin-top: 100px !important; }
+    .bahmas-hero-copy { padding: 70px 0 55px; max-width: 620px; }
+    .bahmas-hero-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .bahmas-highlight-card { height: 400px; }
+    .bahmas-home section:not(.bahmas-hero):not(.p-0) { padding: 70px 0; }
+}
+@media (max-width: 767px) {
+    .bahmas-hero .container, .bahmas-quote .container { padding-right: 24px; padding-left: 24px; }
+    .bahmas-hero-copy { padding-top: 55px; }
+    .bahmas-hero-copy h1 { font-size: clamp(32px, 7.8vw, 44px); overflow-wrap: break-word; }
+    .bahmas-hero-copy .subtitle { font-size: 11px; }
+    .bahmas-hero-copy p { font-size: 15px; }
+    .bahmas-hero-actions .btn-main { padding: 10px 20px; font-size: 14px; }
+    .bahmas-hero-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+    .bahmas-highlight-card { height: 380px; }
+    .bahmas-section-heading h2 { font-size: 34px; }
+    .bahmas-service-image { aspect-ratio: 16 / 10; }
+    .bahmas-faq-item summary { padding: 20px 52px 20px 20px; font-size: 15px; }
+    .bahmas-faq-item summary::after { right: 20px; top: 16px; }
+    .bahmas-faq-answer { padding: 0 20px 22px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .bahmas-home *, .bahmas-home *::before, .bahmas-home *::after { animation: none !important; transition: none !important; }
+}
