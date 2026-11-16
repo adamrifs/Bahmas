@@ -1,0 +1,37 @@
+/* Team layout based on the supplied reference; existing copy is retained. */
+.bahmas-team-page #content { color: #62666c; }
+.team-member-portrait {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(145deg, #e8edf0, #f8f9fa);
+    color: #253542;
+    font-size: clamp(56px, 6vw, 90px);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    border-bottom: 4px solid var(--primary-color);
+}
+.team-member-copy h3 { font-size: 21px; line-height: 1.4; margin-top: 4px; }
+.team-member-role { font-size: 15px; line-height: 1.6; color: var(--primary-color); }
+.team-member-bio { font-size: 14px; line-height: 1.8; }
+.team-story-copy h2 { font-size: 36px; line-height: 1.25; }
+.team-story-copy .lead { font-size: 18px; }
+.team-story-copy p { font-size: 15px; line-height: 1.8; }
+.team-story-copy .subtitle { color: var(--primary-color); }
+.team-story-copy .btn-main:hover { background: #fff; color: #181d24; }
+.team-pillar > i { font-size: 30px; color: var(--primary-color); margin-bottom: 20px; display: block; }
+.team-pillar h3 { font-size: 17px; line-height: 1.5; text-transform: uppercase; }
+.team-pillar p { font-size: 14px; line-height: 1.8; margin: 0; }
+.bahmas-team-page :is(a, button):focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (min-width: 768px) and (max-width: 1199px) {
+    .bahmas-team-page #content > section > .container { padding-right: 24px; padding-left: 24px; }
+}
+@media (max-width: 991px) {
+    .team-story .left-half { min-height: 340px; }
+    .team-story-copy { padding-left: 12px; padding-right: 12px; }
+}
+@media (max-width: 767px) {
+    .team-member-portrait { aspect-ratio: 4 / 4; font-size: 80px; }
+    .team-story-copy h2 { font-size: 30px; }
+    .team-story .left-half { min-height: 260px; }
+}
