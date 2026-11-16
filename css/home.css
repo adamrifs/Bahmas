@@ -169,13 +169,8 @@
 .bahmas-faq-answer p { margin: 0; }
 .bahmas-faq-answer a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
 
-.bahmas-quote {
-    background: linear-gradient(90deg, rgba(9,18,27,.91), rgba(9,18,27,.7)),
-                url('../images/background/1.webp') center / cover;
-    padding: 85px 0;
-}
-.bahmas-quote h2 { max-width: 800px; font-size: clamp(32px, 4vw, 48px); }
-.bahmas-quote p { max-width: 680px; margin-bottom: 0; color: rgba(255,255,255,.85); }
+.bahmas-home #content .bahmas-contact { padding: 50px 0; }
+.bahmas-home .bahmas-contact .btn-main { padding: var(--btn-padding); }
 .bahmas-home :is(a, summary, button):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
 .bahmas-home .bahmas-faq-item[open] summary:focus-visible { outline-color: #181d24; }
 .bahmas-skip-link {
@@ -208,7 +203,7 @@
     .bahmas-home section:not(.bahmas-hero):not(.p-0) { padding: 70px 0; }
 }
 @media (max-width: 767px) {
-    .bahmas-hero .container, .bahmas-quote .container { padding-right: 24px; padding-left: 24px; }
+    .bahmas-hero .container { padding-right: 24px; padding-left: 24px; }
     .bahmas-hero-copy { padding-top: 55px; }
     .bahmas-hero-copy h1 { font-size: clamp(32px, 7.8vw, 44px); overflow-wrap: break-word; }
     .bahmas-hero-copy .subtitle { font-size: 11px; }

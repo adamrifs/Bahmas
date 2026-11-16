@@ -1,0 +1,33 @@
+/* About-page layout adapted from the supplied LogiXpress reference. */
+.bahmas-about-page #content { color: #62666c; }
+.about-inset-image { height: auto; }
+.about-image-stack > div > img { height: auto; }
+.about-expertise { margin-top: 50px; }
+.about-expertise-item { padding: 18px 0; border-bottom: 3px solid var(--primary-color); }
+.about-expertise-item h3 { font-size: 18px; line-height: 1.5; margin-bottom: 6px; }
+.about-expertise-item h3 span { float: right; color: var(--primary-color); }
+.about-expertise-item a:hover h3 { color: var(--primary-color); }
+.about-expertise-item p { font-size: 14px; margin: 0; line-height: 1.7; }
+.about-fact { padding: 22px 8px; }
+.about-fact h3 { font-size: 40px; margin-bottom: 0; }
+.about-fact p { font-size: 15px; margin-bottom: 0; }
+.about-sea-image > img { height: auto; aspect-ratio: 1; object-fit: cover; }
+.about-sea-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+.about-sea-copy h2 { font-size: clamp(36px, 4vw, 58px); line-height: 1.18; }
+.about-sea-note { font-size: 14px; line-height: 1.6; color: #181d24; font-weight: 600; }
+.bahmas-about-page :is(a, button):focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 1199px) {
+    .bahmas-about-page main > section > .container { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 991px) {
+    .about-image-stack { max-width: 640px; margin: 0 auto 20px; }
+    .about-sea-image > img { max-height: 580px; }
+}
+@media (max-width: 767px) {
+    .about-expertise { margin-top: 30px; }
+    .about-fact { padding: 16px 4px; }
+    .about-fact h3 { font-size: 34px; }
+    .about-sea-copy h2 { font-size: 36px; }
+    .about-sea-badge { padding: 18px !important; }
+    .about-sea-badge h3 { font-size: 24px; }
+}
