@@ -1,0 +1,28 @@
+/* Approved air freight content in the shared service-page template. */
+.bahmas-air-page #content { color: #62666c; }
+.bahmas-air-page .air-section { padding: clamp(64px, 7vw, 104px) 0; }
+.bahmas-air-page .air-section > .container { max-width: 1400px; min-width: 0; padding-left: 24px; padding-right: 24px; }
+.bahmas-air-page .air-section h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.2; margin-bottom: 24px; overflow-wrap: break-word; }
+.bahmas-air-page .air-section p { font-size: 16px; line-height: 1.85; }
+.bahmas-air-page .subtitle { font-size: 13px; letter-spacing: .1em; }
+.bahmas-air-page #subheader .crumb { justify-content: center; }
+.air-intro-image { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+.air-included { background: #edf5fb; }
+.air-section-heading { max-width: 850px; text-align: center; margin: 0 auto 44px; }
+.air-service-card { height: 100%; padding: 32px 24px; background: #fff; border: 1px solid #e1e9f0; border-radius: 16px; box-shadow: 0 6px 20px rgba(14, 42, 66, .04); text-align: center; }
+.air-service-card i { display: inline-block; font-size: 34px; color: #1765a0; margin-bottom: 24px; }
+.air-service-card h3 { font-size: 21px; line-height: 1.4; margin-bottom: 14px; }
+.bahmas-air-page .air-service-card p { font-size: 15px; margin-bottom: 0; }
+.air-cta { text-align: center; background: #f8f9fa; }
+.air-cta h2 { max-width: 850px; margin-left: auto; margin-right: auto; }
+.air-cta p { max-width: 800px; margin: 0 auto 28px; }
+.bahmas-air-page .air-cta .btn-main { min-height: 48px; padding: 12px 30px; background: #1765a0; }
+.bahmas-air-page .air-cta .btn-main:hover { background: #114c79; }
+.bahmas-air-page :is(a, button):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 991px) {
+    .air-intro-image { aspect-ratio: 16 / 10; max-height: 480px; }
+}
+@media (max-width: 575px) {
+    .air-service-card { padding: 24px; }
+    .air-section-heading { margin-bottom: 32px; }
+}

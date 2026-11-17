@@ -1,0 +1,8 @@
+/* Truck-image CTA; service layouts share the Air and Sea Freight template. */
+.bahmas-overland-page .overland-cta { position: relative; background: #0b2038; }
+.overland-cta-image, .overland-cta::before { position: absolute; inset: 0; width: 100%; height: 100%; }
+.overland-cta-image { object-fit: cover; object-position: center; }
+.overland-cta::before { content: ''; z-index: 1; background: rgba(5, 25, 48, .85); }
+.overland-cta > .container { position: relative; z-index: 2; }
+.bahmas-overland-page .overland-cta p { color: rgba(255, 255, 255, .9); }
+.overland-cta .btn-main:focus-visible { outline-color: #fff; }

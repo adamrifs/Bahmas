@@ -1,0 +1,40 @@
+(() => {
+    const form = document.getElementById('contact_form');
+    if (!form) return;
+    const button = form.querySelector('[type="submit"]');
+    const status = document.getElementById('contact-form-status');
+    const showStatus = (message, state) => { status.textContent = message; status.dataset.state = state; };
+    form.addEventListener('input', event => { event.target.setCustomValidity?.(''); });
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (button.disabled) return;
+        for (const field of form.querySelectorAll('[required]')) field.setCustomValidity(field.value.trim() ? '' : 'Please complete this field.');
+        if (!form.reportValidity()) return;
+        const endpoint = form.dataset.endpoint.trim();
+        if (!endpoint) {
+            showStatus('Online messaging is currently unavailable. Please call +974 40014111 or email info@bhamasqatar.com to contact our team.', 'error');
+            return;
+        }
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        form.setAttribute('aria-busy', 'true');
+        showStatus('Sending your message…', 'loading');
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
+        try {
+            const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(Object.fromEntries([...new FormData(form)].map(([key, value]) => [key, String(value).trim()]))), signal: controller.signal });
+            if (!response.ok) throw new Error('Delivery failed');
+            const result = await response.json();
+            if (result.success !== true) throw new Error('Delivery was not confirmed');
+            form.reset();
+            showStatus('Your message has been sent. Thank you for contacting Bahmas Transportation Services.', 'success');
+        } catch {
+            showStatus('Your message could not be sent. Please try again, call +974 40014111 or email info@bhamasqatar.com.', 'error');
+        } finally {
+            clearTimeout(timeout);
+            button.disabled = false;
+            button.textContent = 'Send Message';
+            form.removeAttribute('aria-busy');
+        }
+    });
+})();

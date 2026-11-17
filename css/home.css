@@ -118,6 +118,44 @@
     font-weight: 700;
 }
 .bahmas-read-arrow { margin-left: 8px; }
+
+/* Larger service highlights, scoped to the homepage. */
+.bahmas-home #our-services { padding: clamp(72px, 8vw, 128px) 0; }
+.bahmas-home .bahmas-services-container {
+    max-width: 1500px;
+    min-width: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.bahmas-services .bahmas-section-heading { margin-bottom: clamp(36px, 4vw, 60px); }
+.bahmas-services .bahmas-section-heading h2 {
+    font-size: clamp(34px, 3.6vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.bahmas-services .bahmas-section-heading p {
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.8;
+}
+.bahmas-services-grid { --bs-gutter-x: 32px; --bs-gutter-y: 44px; }
+.bahmas-services .bahmas-service-image {
+    position: relative;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    max-height: 360px;
+}
+.bahmas-services .bahmas-service-image img { position: absolute; inset: 0; }
+.bahmas-services .bahmas-service-copy { padding-top: clamp(24px, 2vw, 32px); }
+.bahmas-services .bahmas-service-copy h3 {
+    font-size: clamp(22px, 1.8vw, 28px);
+    margin-bottom: 16px;
+}
+.bahmas-services .bahmas-service-copy p {
+    font-size: clamp(16px, 1.1vw, 17px);
+    margin-bottom: 24px;
+}
+.bahmas-services .bahmas-read-more { font-size: 16px; }
+
 .bahmas-check {
     display: block;
     width: 22px;
@@ -139,40 +177,108 @@
 }
 .bahmas-feature p { margin-bottom: 0; }
 
-.bahmas-faq-item {
-    background: #f4f4f4;
-    color: #181d24;
-    border-radius: 16px;
-    margin-bottom: 12px;
+/* Match the larger services section with roomier homepage features. */
+.bahmas-home #why-choose-us { padding: clamp(72px, 8vw, 128px) 0; }
+.bahmas-home .bahmas-why-container {
+    max-width: 1500px;
+    min-width: 0;
+    padding-right: 24px;
+    padding-left: 24px;
 }
-.bahmas-faq-item[open] { background: var(--primary-color); color: #fff; }
-.bahmas-faq-item summary {
-    position: relative;
-    padding: 24px 68px 24px 28px;
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.6;
-    list-style: none;
-    cursor: pointer;
+.bahmas-why .bahmas-section-heading { margin-bottom: clamp(40px, 4.5vw, 68px); }
+.bahmas-why .bahmas-section-heading h2 {
+    font-size: clamp(34px, 3.6vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 0;
 }
-.bahmas-faq-item summary::-webkit-details-marker { display: none; }
-.bahmas-faq-item summary::after {
-    content: "+";
-    position: absolute;
-    right: 28px;
-    top: 22px;
-    font-size: 25px;
-    font-weight: 400;
+.bahmas-why-grid {
+    --bs-gutter-x: clamp(24px, 3vw, 44px);
+    --bs-gutter-y: clamp(36px, 4vw, 60px);
 }
-.bahmas-faq-item[open] summary::after { content: "\2212"; }
-.bahmas-faq-answer { padding: 0 68px 26px 28px; font-size: 15px; line-height: 1.85; }
-.bahmas-faq-answer p { margin: 0; }
-.bahmas-faq-answer a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
+.bahmas-why .bahmas-feature { gap: 24px; height: 100%; }
+.bahmas-why .bahmas-feature > div { flex: 1; min-width: 0; }
+.bahmas-why .bahmas-feature-icon { flex-basis: 80px; height: 80px; border-radius: 20px; }
+.bahmas-why .bahmas-check { width: 28px; height: 15px; border-width: 4px; }
+.bahmas-why .bahmas-feature h3 {
+    font-size: clamp(22px, 1.7vw, 26px);
+    line-height: 1.35;
+    margin-bottom: 14px;
+}
+.bahmas-why .bahmas-feature p {
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.85;
+}
 
-.bahmas-home #content .bahmas-contact { padding: 50px 0; }
-.bahmas-home .bahmas-contact .btn-main { padding: var(--btn-padding); }
+.bahmas-home #homepage-faq { padding: clamp(72px, 8vw, 128px) 0; }
+.bahmas-home .bahmas-home-faq-container {
+    max-width: 1500px;
+    min-width: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.bahmas-home-faq .bahmas-section-heading { margin-bottom: clamp(32px, 4vw, 56px); }
+.bahmas-home-faq .bahmas-section-heading h2 {
+    font-size: clamp(34px, 3.6vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.bahmas-home-faq .bahmas-section-heading p { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.8; }
+.bahmas-home-faq .faq-tabs { gap: 8px; margin-bottom: 28px; }
+.bahmas-home-faq .faq-tabs button { min-height: 48px; padding: 12px 22px; font-weight: 600; }
+.bahmas-home-faq .faq-category-heading { font-size: clamp(24px, 2.5vw, 30px); line-height: 1.3; margin-bottom: 20px; }
+.bahmas-home-faq .faq-item summary {
+    padding: 22px 48px 22px 0;
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.6;
+}
+.bahmas-home-faq .faq-item summary::after { content: '+'; top: 50%; right: 12px; width: 24px; height: 24px; border: 0; font-size: 26px; line-height: 24px; text-align: center; transform: translateY(-50%); }
+.bahmas-home-faq .faq-item[open] summary::after { content: '\2212'; transform: translateY(-50%); }
+.bahmas-home-faq .faq-answer {
+    padding: 20px 48px 24px 0;
+    font-size: clamp(16px, 1.2vw, 17px);
+    line-height: 1.85;
+}
+.bahmas-home-faq-more { margin-top: 32px; text-align: center; }
+
+.bahmas-home #get-a-quote { padding: clamp(64px, 7vw, 112px) 0; }
+.bahmas-quote-cta { position: relative; background: #101820; }
+.bahmas-quote-image, .bahmas-quote-cta::before {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.bahmas-quote-image { object-fit: cover; object-position: 65% center; }
+.bahmas-quote-cta::before {
+    content: "";
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(9, 18, 27, .92), rgba(9, 18, 27, .72) 48%, rgba(9, 18, 27, .16));
+}
+.bahmas-home .bahmas-quote-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1500px;
+    min-width: 0;
+    padding-right: clamp(24px, 4vw, 64px);
+    padding-left: clamp(24px, 4vw, 64px);
+}
+.bahmas-quote-copy { max-width: 740px; }
+.bahmas-quote-copy h2 {
+    max-width: 680px;
+    font-size: clamp(34px, 3.6vw, 52px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+.bahmas-quote-copy p {
+    max-width: 580px;
+    font-size: clamp(16px, 1.3vw, 18px);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .9);
+    margin-bottom: 28px;
+}
+.bahmas-home .bahmas-quote-cta .btn-main { min-height: 48px; padding: 12px 32px; }
+.bahmas-home .bahmas-quote-cta .btn-main:focus-visible { outline-color: #fff; }
 .bahmas-home :is(a, summary, button):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 5px; }
-.bahmas-home .bahmas-faq-item[open] summary:focus-visible { outline-color: #181d24; }
 .bahmas-skip-link {
     position: fixed;
     top: 12px;
@@ -189,8 +295,11 @@
 @media (max-width: 1199px) {
     .bahmas-highlight-copy { padding: 26px; }
     .bahmas-highlight-copy h2 { font-size: 24px; }
+    .bahmas-services .bahmas-service-image { aspect-ratio: 4 / 3; }
     .bahmas-feature { gap: 16px; }
     .bahmas-feature-icon { flex-basis: 52px; height: 52px; font-size: 22px; }
+    .bahmas-why .bahmas-feature { gap: 20px; }
+    .bahmas-why .bahmas-feature-icon { flex-basis: 64px; height: 64px; border-radius: 16px; }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
     .bahmas-home main > section > .container { padding-right: 24px; padding-left: 24px; }
@@ -209,13 +318,19 @@
     .bahmas-hero-copy .subtitle { font-size: 11px; }
     .bahmas-hero-copy p { font-size: 15px; }
     .bahmas-hero-actions .btn-main { padding: 10px 20px; font-size: 14px; }
-    .bahmas-hero-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+    .bahmas-hero-highlights { display: none; }
     .bahmas-highlight-card { height: 380px; }
     .bahmas-section-heading h2 { font-size: 34px; }
     .bahmas-service-image { aspect-ratio: 16 / 10; }
-    .bahmas-faq-item summary { padding: 20px 52px 20px 20px; font-size: 15px; }
-    .bahmas-faq-item summary::after { right: 20px; top: 16px; }
-    .bahmas-faq-answer { padding: 0 20px 22px; font-size: 14px; }
+    .bahmas-services-grid { --bs-gutter-y: 36px; }
+    .bahmas-home-faq .faq-tabs button { padding: 12px 16px; }
+    .bahmas-home-faq .faq-item summary { padding: 20px 36px 20px 0; }
+    .bahmas-home-faq .faq-answer { padding-right: 0; }
+    .bahmas-quote-cta::before { background: rgba(9, 18, 27, .78); }
+}
+@media (max-width: 575px) {
+    .bahmas-why .bahmas-feature { flex-direction: column; }
+    .bahmas-why .bahmas-feature-icon { width: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .bahmas-home *, .bahmas-home *::before, .bahmas-home *::after { animation: none !important; transition: none !important; }

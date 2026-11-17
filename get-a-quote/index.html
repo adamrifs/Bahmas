@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | Bahmas Transportation Services</title>
+    <meta name="description" content="Request a freight quote from Bahmas Transportation Services for air, sea and overland shipping or customs brokerage. Share your cargo details, origin and destination.">
+    <meta name="theme-color" content="#F85C00">
+    <link rel="icon" href="images/icons-color/3.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/coloring.css" rel="stylesheet">
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet">
+    <link href="css/quote.css" rel="stylesheet">
+</head>
+
+<body class="bahmas-quote-page">
+    <a class="quote-skip-link" href="get-a-quote/#quote-content">Skip to quote request</a>
+    <div id="wrapper">
+        <a href="get-a-quote/#top" id="back-to-top" aria-label="Back to top"></a>
+        <div id="de-loader" aria-hidden="true"></div>
+        <div data-include="components/navbar.html"></div>
+        <main class="no-bottom no-top" id="content">
+            <div id="top"></div>
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3 text-center" data-bgimage="url(images/misc/s2.webp) center" aria-labelledby="quote-page-heading">
+                <div class="container relative z-2">
+                    <h1 id="quote-page-heading">Get a Quote</h1>
+                    <ul class="crumb" aria-label="Breadcrumb"><li><a href="./">Home</a></li><li class="active" aria-current="page">Get a Quote</li></ul>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div><div class="sw-overlay op-7"></div>
+            </section>
+            <section class="quote-section" aria-labelledby="quote-intro-heading">
+                <div class="container quote-container"><div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="subtitle">REQUEST A QUOTE</div>
+                        <h2 id="quote-intro-heading">Get the Right Logistics Solution for Your Shipment</h2>
+                        <p>Every shipment has different transportation requirements. Bahmas Transportation Services provides air, sea and overland freight solutions tailored to your cargo, destination and business needs.</p>
+                        <p class="mb-0">Share your shipment details with us using the form below. Our team will review your requirements and contact you to discuss a suitable freight solution and quotation.</p>
+                    </div>
+                    <div class="col-lg-6"><img class="quote-intro-image rounded-1" src="images/misc/s3.webp" alt="Container ship transporting cargo across international waters" width="1000" height="1000" loading="lazy"></div>
+                </div></div>
+            </section>
+            <section id="quote-content" class="quote-section quote-form-section" aria-labelledby="quote-form-heading">
+                <div class="container quote-container">
+                    <div class="quote-section-heading"><div class="subtitle">SHIPMENT DETAILS</div><h2 id="quote-form-heading">Tell Us About Your Shipment</h2><p>Provide a few details about your cargo and transportation requirements. This will help our team understand your shipment and prepare a suitable quotation.</p></div>
+                    <!-- Configure data-endpoint with the quote-request API. It must return {"success":true} only after accepting the request. -->
+                    <form id="quote_request_form" class="quote-form-card" method="post" data-endpoint="" aria-describedby="quote-required-note">
+                        <p id="quote-required-note" class="quote-required-note">* indicates required fields.</p>
+                        <div class="row g-4">
+                            <div class="col-md-6"><label for="quote-name">Full Name *</label><input class="form-control" id="quote-name" name="name" type="text" autocomplete="name" maxlength="150" required></div>
+                            <div class="col-md-6"><label for="quote-company">Company Name (optional)</label><input class="form-control" id="quote-company" name="company" type="text" autocomplete="organization" maxlength="150"></div>
+                            <div class="col-md-6"><label for="quote-email">Email Address *</label><input class="form-control" id="quote-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+                            <div class="col-md-6"><label for="quote-phone">Phone Number *</label><input class="form-control" id="quote-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" required></div>
+                            <div class="col-md-6"><label for="quote-service">Service Required *</label><select class="form-control" id="quote-service" name="service" required><option value="" disabled selected>Select a service</option><option>Air Freight</option><option>Sea Freight</option><option>Overland Freight</option><option>Customs Brokerage</option></select></div>
+                            <div class="col-md-6"><label for="quote-origin">Origin (From) *</label><input class="form-control" id="quote-origin" name="origin" type="text" maxlength="200" required></div>
+                            <div class="col-md-6"><label for="quote-destination">Destination (To) *</label><input class="form-control" id="quote-destination" name="destination" type="text" maxlength="200" required></div>
+                            <div class="col-md-6"><label for="quote-cargo">Cargo Type / Description *</label><input class="form-control" id="quote-cargo" name="cargo_description" type="text" maxlength="300" required></div>
+                            <div class="col-md-6"><label for="quote-weight">Cargo Weight (optional)</label><div class="input-group"><input class="form-control" id="quote-weight" name="cargo_weight_kg" type="number" min="0.01" step="any" aria-describedby="quote-weight-unit"><span class="input-group-text" id="quote-weight-unit">kg</span></div></div>
+                            <div class="col-md-6"><label for="quote-dimensions">Cargo Dimensions (optional)</label><input class="form-control" id="quote-dimensions" name="cargo_dimensions" type="text" maxlength="200" placeholder="L × W × H (include units)"></div>
+                            <div class="col-md-6"><label for="quote-date">Shipment Date (optional)</label><input class="form-control" id="quote-date" name="shipment_date" type="date"></div>
+                            <div class="col-12"><label for="quote-additional">Additional Requirements (optional)</label><textarea class="form-control" id="quote-additional" name="additional_requirements" rows="6" maxlength="5000"></textarea></div>
+                        </div>
+                        <button class="btn-main quote-submit" type="submit">Request a Quote</button>
+                        <p id="quote-form-status" class="quote-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </section>
+            <section class="quote-section quote-process" aria-labelledby="quote-process-heading">
+                <div class="container quote-container">
+                    <div class="quote-section-heading"><div class="subtitle">OUR PROCESS</div><h2 id="quote-process-heading">A Simple Way to Get Your Shipping Quote</h2><p>We make it easy to share your shipment requirements and connect with our team to discuss the right logistics solution.</p></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><article class="quote-process-card"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><h3>1. Share Your Requirements</h3><p>Complete the quote request form with your contact information, cargo details, origin and destination.</p></article></div>
+                        <div class="col-lg-4 col-md-6"><article class="quote-process-card"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>2. Our Team Reviews Your Request</h3><p>Our team reviews the shipment information and understands your transportation requirements.</p></article></div>
+                        <div class="col-lg-4 col-md-6"><article class="quote-process-card"><i class="fa-solid fa-comments-dollar" aria-hidden="true"></i><h3>3. Discuss Your Quote</h3><p>Our team contacts you to discuss suitable freight options and the quotation for your shipment.</p></article></div>
+                    </div>
+                </div>
+            </section>
+            <section class="quote-section quote-support text-light rounded-1 overflow-hidden m-3" aria-labelledby="quote-support-heading">
+                <img class="quote-support-image" src="images/misc/s2.webp" alt="" width="1000" height="1000" loading="lazy">
+                <div class="container quote-container">
+                    <div class="subtitle">NEED ASSISTANCE?</div><h2 id="quote-support-heading">Have Questions About Your Shipment?</h2>
+                    <p>Not sure which freight service is right for your cargo? Contact Bahmas Transportation Services to discuss your shipping requirements. Our team is ready to help you explore suitable air, sea and overland transportation solutions.</p>
+                    <a class="btn-main" href="contact/">Contact Us</a>
+                </div>
+            </section>
+        </main>
+        <div data-include="components/footer.html"></div>
+    </div>
+    <script src="js/quote.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>
