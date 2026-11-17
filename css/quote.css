@@ -1,0 +1,39 @@
+.bahmas-quote-page #content { color: #62666c; }
+.bahmas-quote-page #quote-page-heading { font-size: clamp(40px, 5vw, 64px); }
+.bahmas-quote-page #subheader .crumb { justify-content: center; }
+.bahmas-quote-page .quote-section { padding: clamp(56px, 7vw, 100px) 0; scroll-margin-top: 100px; }
+.bahmas-quote-page .quote-container { max-width: 1400px; min-width: 0; padding-left: 24px; padding-right: 24px; }
+.bahmas-quote-page .quote-section h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.2; margin-bottom: 24px; overflow-wrap: break-word; }
+.bahmas-quote-page .quote-section p { font-size: 16px; line-height: 1.85; }
+.quote-intro-image { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+.quote-section-heading { max-width: 850px; text-align: center; margin: 0 auto 44px; }
+.quote-section-heading p { margin-bottom: 0; }
+.quote-form-section { background: #f8f9fa; }
+.quote-form-card { max-width: 1040px; margin: 0 auto; padding: clamp(24px, 4vw, 48px); background: #fff; border: 1px solid #e1e7ed; border-radius: 16px; box-shadow: 0 6px 20px rgba(14,42,66,.04); }
+.bahmas-quote-page .quote-required-note { font-size: 13px; margin-bottom: 24px; }
+.quote-form-card label { display: block; color: #35404e; font-size: 14px; margin-bottom: 7px; }
+#quote_request_form .form-control { min-height: 48px; padding: 11px 13px; border: 1px solid #d5dbe1; background-color: #fff; color: #181d24; font-size: 16px; }
+#quote_request_form .input-group .form-control { min-width: 0; }
+#quote_request_form textarea { resize: vertical; }
+.bahmas-quote-page .quote-submit { min-height: 48px; padding: 12px 28px; margin-top: 28px; border: 0; background: #1765a0; }
+.quote-submit:disabled { opacity: .65; cursor: wait; }
+.bahmas-quote-page .quote-status { margin: 16px 0 0; font-size: 14px; }
+.quote-status[data-state="error"] { color: #9d2424; }
+.quote-status[data-state="success"] { color: #176038; }
+.quote-process { background: #edf5fb; }
+.quote-process-card { height: 100%; padding: 32px 28px; border-radius: 16px; background: #fff; border: 1px solid #e1e9f0; box-shadow: 0 6px 20px rgba(14,42,66,.04); }
+.quote-process-card i { font-size: 34px; color: #1765a0; margin-bottom: 24px; display: inline-block; }
+.quote-process-card h3 { font-size: 23px; line-height: 1.4; margin-bottom: 16px; }
+.quote-process-card p { margin-bottom: 0; }
+.quote-support { position: relative; text-align: center; background: #0b2038; }
+.quote-support-image, .quote-support::before { position: absolute; inset: 0; width: 100%; height: 100%; }
+.quote-support-image { object-fit: cover; }
+.quote-support::before { content: ''; z-index: 1; background: rgba(5,25,48,.85); }
+.quote-support > .container { position: relative; z-index: 2; }
+.quote-support p { max-width: 800px; margin: 0 auto 28px; color: rgba(255,255,255,.9); }
+.bahmas-quote-page .quote-support .btn-main { min-height: 48px; padding: 12px 30px; background: #1765a0; }
+.bahmas-quote-page :is(a, button, input, select, textarea):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
+.quote-skip-link { position: fixed; top: 12px; left: 12px; z-index: 10000; padding: 12px 20px; border-radius: 8px; background: #fff; color: #181d24; transform: translateY(-160%); }
+.quote-skip-link:focus { transform: translateY(0); }
+@media(max-width:991px) { .quote-intro-image { aspect-ratio: 16 / 10; max-height: 480px; } }
+@media(max-width:575px) { .quote-process-card { padding: 24px; } .quote-section-heading { margin-bottom: 32px; } }

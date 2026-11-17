@@ -1,0 +1,31 @@
+.bahmas-contact-page #content { color: #62666c; }
+.bahmas-contact-page .contact-section { padding: clamp(56px, 7vw, 100px) 0; }
+.bahmas-contact-page .contact-section > .container { max-width: 1400px; min-width: 0; padding-left: 24px; padding-right: 24px; }
+.bahmas-contact-page .contact-section h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.2; margin-bottom: 24px; overflow-wrap: break-word; }
+.bahmas-contact-page .contact-section p { font-size: 16px; line-height: 1.85; }
+.bahmas-contact-page #subheader .crumb { justify-content: center; }
+.contact-intro-image { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+.contact-information, .contact-location { background: #edf5fb; }
+.contact-info-card { height: 100%; padding: 32px 24px; border: 1px solid #e1e9f0; border-radius: 16px; background: #fff; text-align: center; box-shadow: 0 6px 20px rgba(14,42,66,.04); }
+.contact-info-card i { font-size: 32px; color: #1765a0; margin-bottom: 20px; }
+.contact-section h3 { font-size: 22px; line-height: 1.4; margin-bottom: 16px; }
+.contact-info-card a { color: #35404e; text-decoration: underline; line-height: 1.8; overflow-wrap: anywhere; }
+.contact-form-card { padding: clamp(20px, 3vw, 36px); border: 1px solid #e1e7ed; border-radius: 16px; background: #fff; box-shadow: 0 6px 20px rgba(14,42,66,.04); scroll-margin-top: 100px; }
+.bahmas-contact-page .contact-note { font-size: 13px; }
+.contact-form-card label { display: block; font-size: 14px; margin-bottom: 7px; color: #35404e; }
+.contact-form-card .form-control { min-height: 48px; font-size: 16px; width: 100%; padding: 11px 13px; background-color: #fff; border: 1px solid #d5dbe1; color: #181d24; }
+.contact-form-card textarea { resize: vertical; }
+.bahmas-contact-page .contact-submit { min-height: 48px; padding: 12px 28px; margin-top: 24px; border: 0; background: #1765a0; }
+.contact-submit:disabled { opacity: .65; cursor: wait; }
+.bahmas-contact-page .contact-status { margin: 16px 0 0; font-size: 14px; }
+.contact-status[data-state="error"] { color: #9d2424; }
+.contact-status[data-state="success"] { color: #176038; }
+.contact-assistance-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.contact-assistance { padding: 28px; margin-top: 24px; border-radius: 16px; background: #f8f9fa; }
+.contact-assistance a { display: block; margin-top: 12px; color: #181d24; text-decoration: underline; overflow-wrap: anywhere; }
+.contact-location p { max-width: 850px; }
+.contact-location address { font-style: normal; line-height: 1.8; }
+.contact-directions { display: inline-block; margin: 0 0 24px; color: #1765a0; font-weight: 600; text-decoration: underline; }
+.contact-map { display: block; width: 100%; height: clamp(320px, 35vw, 460px); border: 0; border-radius: 16px; background: #e1e9f0; }
+.bahmas-contact-page :is(a, button, input, select, textarea):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
+@media(max-width:991px) { .contact-intro-image { aspect-ratio: 16 / 10; max-height: 480px; } .contact-assistance-image { max-height: 400px; } }

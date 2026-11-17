@@ -1316,16 +1316,52 @@ section.no-bg,
 .bahmas-wordmark { display: inline-flex; flex-direction: column; color: #fff; line-height: 1; white-space: nowrap; }
 .bahmas-wordmark strong { font-size: 34px; letter-spacing: .1em; font-weight: 800; color: var(--primary-color); }
 .bahmas-wordmark small { font-size: 9px; letter-spacing: .19em; margin-top: 7px; font-weight: 600; color: #fff; }
-.bahmas-footer .bahmas-wordmark { margin-bottom: 24px; }
-.bahmas-footer .bahmas-footer-company { font-size: 20px; line-height: 1.5; }
-.bahmas-footer .bahmas-footer-heading { font-size: 18px; line-height: 1.5; margin-bottom: 22px; }
-.bahmas-footer .bahmas-footer-contact { font-style: normal; font-size: 15px; }
-.bahmas-footer .bahmas-footer-contact > div + div { margin-top: 18px; }
-.bahmas-footer .bahmas-footer-label { display: block; color: rgba(255,255,255,.5); font-size: 13px; margin-bottom: 3px; }
+footer.bahmas-footer { padding: 0; border-top: 3px solid var(--primary-color); background: radial-gradient(ellipse at 0 0, rgba(248,92,0,.075), transparent 50%), #101820; color: #b7c0c9; }
+.bahmas-footer > .container { padding-top: clamp(56px, 6vw, 88px); }
+.bahmas-footer .bahmas-contact { padding: 50px 0; margin: 0; background: var(--primary-color); }
+.bahmas-footer .bahmas-contact > .container { max-width: 1440px; min-width: 0; padding-left: 24px; padding-right: 24px; }
+.bahmas-footer .bahmas-contact h2 { font-size: clamp(26px, 2.4vw, 32px); line-height: 1.35; color: #fff; margin: 0; }
+.bahmas-footer .bahmas-contact .btn-main { color: #fff; border-color: #fff; padding: 8px 26px; min-height: 44px; }
+.bahmas-footer .bahmas-contact .btn-main:hover { background: #fff; color: #181d24; }
+.bahmas-footer > .container, .bahmas-footer .subfooter > .container { max-width: 1440px; min-width: 0; padding-left: 24px; padding-right: 24px; }
+.bahmas-footer-grid { display: grid; grid-template-columns: 1.3fr .7fr .9fr 1.2fr; gap: clamp(28px, 3vw, 48px); }
+.bahmas-footer-grid > * { min-width: 0; }
+.bahmas-footer-grid > nav { height: auto; }
+.bahmas-footer .bahmas-wordmark { margin-bottom: 28px; }
+.bahmas-footer .bahmas-wordmark strong { font-size: 42px; color: var(--primary-color); }
+.bahmas-footer .bahmas-wordmark small { font-size: 10px; }
+.bahmas-footer .bahmas-footer-company { font-size: 23px; line-height: 1.4; color: #fff; margin-bottom: 16px; }
+.bahmas-footer-brand > p { max-width: 36ch; font-size: 14px; line-height: 1.85; margin-bottom: 24px; }
+.bahmas-footer .bahmas-footer-heading { font-size: 16px; font-weight: 700; line-height: 1.5; color: #fff; margin-bottom: 26px; padding-bottom: 16px; position: relative; }
+.bahmas-footer-heading::after { content: ''; position: absolute; width: 32px; height: 2px; bottom: 0; left: 0; background: var(--primary-color); }
+.bahmas-footer-links { list-style: none; padding: 0; margin: 0; }
+.bahmas-footer-links li + li { margin-top: 8px; }
+.bahmas-footer .bahmas-footer-links a { display: inline-block; padding: 4px 0; color: #b7c0c9; font-size: 14px; line-height: 1.7; }
+.bahmas-footer-links a span { margin-left: 6px; color: var(--primary-color); }
+.bahmas-footer-social-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; color: #dbe1e7; margin-bottom: 12px; }
+.bahmas-footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+.bahmas-footer .bahmas-footer-social-icon { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid #3c4650; border-radius: 50%; background: rgba(255,255,255,.04); color: #fff; font-size: 20px; transition: background .2s, border-color .2s, transform .2s; }
+.bahmas-footer-social-icon:hover { background: var(--primary-color); border-color: var(--primary-color); transform: translateY(-3px); }
+.bahmas-footer .bahmas-footer-contact { font-style: normal; font-size: 14px; line-height: 1.8; margin: 0; }
+.bahmas-footer-contact-item { display: flex; align-items: flex-start; gap: 14px; }
+.bahmas-footer-contact-item > div { min-width: 0; }
+.bahmas-footer-contact-item + .bahmas-footer-contact-item { margin-top: 22px; }
+.bahmas-footer-contact-icon { flex: 0 0 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: rgba(248,92,0,.1); color: var(--primary-color); font-size: 15px; }
+.bahmas-footer .bahmas-footer-label { display: block; color: #8996a3; font-size: 12px; margin-bottom: 4px; }
 .bahmas-footer .bahmas-footer-contact p { margin: 0; }
+.bahmas-footer .bahmas-footer-contact a { color: #dbe1e7; }
+.bahmas-footer-location { display: flex; align-items: center; gap: 8px; margin-top: 24px; font-size: 12px; color: #8996a3; }
+.bahmas-footer-location > span { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: var(--primary-color); }
+.bahmas-footer .subfooter { margin-top: clamp(36px, 4vw, 56px); padding: 24px 0; border-top: 1px solid #2a343e; background: rgba(0,0,0,.12); }
+.bahmas-footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: #8996a3; }
+.bahmas-footer-bottom p { margin: 0; }
+.bahmas-footer-bottom > span > span { color: var(--primary-color); padding: 0 10px; }
 .bahmas-footer a { overflow-wrap: anywhere; }
 .bahmas-footer a:hover { color: var(--primary-color); }
 .bahmas-footer a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 1199px) { .bahmas-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; } }
+@media (max-width: 575px) { .bahmas-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; } .bahmas-footer-bottom { flex-direction: column; text-align: center; } }
+@media (prefers-reduced-motion: reduce) { .bahmas-footer-social-icon { transition: none; } .bahmas-footer-social-icon:hover { transform: none; } }
 button#menu-btn { border: 0; background: transparent; padding: 0; }
 header #menu-btn { position: relative; }
 header #menu-btn::before {

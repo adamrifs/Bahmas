@@ -5,7 +5,7 @@
     <base href="../">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Bahmas Transportation W.L.L.</title>
+    <title>Frequently Asked Questions | Bahmas Transportation Services</title>
     <meta name="description" content="Answers to common questions about Bahmas freight forwarding, shipping, cargo support, quotes and customs documentation.">
     <link rel="icon" href="images/icons-color/3.png" type="image/png">
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap">
@@ -18,122 +18,61 @@
 
 <body class="bahmas-faq-page">
     <div id="wrapper">
-        <a href="#top" id="back-to-top" aria-label="Back to top"></a>
+        <a href="faq/#top" id="back-to-top" aria-label="Back to top"></a>
         <div id="de-loader" aria-hidden="true"></div>
         <div data-include="components/navbar.html"></div>
-
         <main class="no-bottom no-top" id="content">
             <div id="top"></div>
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/1.webp) center" aria-labelledby="faq-heading">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3 text-center" data-bgimage="url(images/background/1.webp) center" aria-labelledby="faq-heading">
                 <div class="container relative z-2">
-                    <div class="row gy-4 gx-5 align-items-center">
-                        <div class="col-lg-12">
-                            <h1 id="faq-heading" class="split">FAQ</h1>
-                            <ul class="crumb wow fadeInUp" aria-label="Breadcrumb">
-                                <li><a href="./">Home</a></li>
-                                <li class="active" aria-current="page">FAQs</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h1 id="faq-heading">Frequently Asked Questions</h1>
+                    <ul class="crumb" aria-label="Breadcrumb"><li><a href="./">Home</a></li><li class="active" aria-current="page">FAQ</li></ul>
                 </div>
                 <div class="gradient-edge-bottom color op-7 h-80"></div>
                 <div class="sw-overlay op-7"></div>
             </section>
-
-            <section class="faq-section" aria-label="Frequently asked questions">
+            <section class="faq-section" aria-label="Frequently asked questions by category">
                 <div class="container">
                     <div class="faq-tabs" role="tablist" aria-label="FAQ categories">
-                        <button type="button" id="faq-tab-shipping" role="tab" aria-controls="faq-panel-shipping" aria-selected="true" tabindex="0">Shipping &amp; Delivery</button>
-                        <button type="button" id="faq-tab-support" role="tab" aria-controls="faq-panel-support" aria-selected="false" tabindex="-1">Tracking &amp; Support</button>
-                        <button type="button" id="faq-tab-billing" role="tab" aria-controls="faq-panel-billing" aria-selected="false" tabindex="-1">Billing &amp; Documentation</button>
+                        <button type="button" id="faq-tab-general" role="tab" aria-controls="faq-panel-general" aria-selected="true" tabindex="0">General</button>
+                        <button type="button" id="faq-tab-shipment" role="tab" aria-controls="faq-panel-shipment" aria-selected="false" tabindex="-1">Shipment</button>
+                        <button type="button" id="faq-tab-payment" role="tab" aria-controls="faq-panel-payment" aria-selected="false" tabindex="-1">Payment</button>
+                        <button type="button" id="faq-tab-international" role="tab" aria-controls="faq-panel-international" aria-selected="false" tabindex="-1">International</button>
                     </div>
-                    <div id="faq-panel-shipping" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-shipping">
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>What is freight forwarding and how does it work?</summary>
-                                <div class="faq-answer"><p>Freight forwarding is the process of organizing and coordinating the transportation of goods from one destination to another. It involves selecting suitable transportation methods, managing shipping documentation, coordinating cargo movement and supporting customs clearance to ensure an efficient shipping process.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>What services does your freight forwarding company offer?</summary>
-                                <div class="faq-answer"><p>Bahmas Transportation offers a range of freight and logistics services, including air freight, sea freight, overland transportation and customs brokerage. We also provide freight forwarding, import and export documentation, cargo handling and other logistics support to meet different shipping requirements.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>What types of cargo can your company handle?</summary>
-                                <div class="faq-answer"><p>We handle various types of cargo, including general, bulk and specialized shipments. Our freight solutions accommodate different cargo requirements through air, sea and overland transportation, with appropriate handling and coordination.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>How long does it take for my goods to be delivered?</summary>
-                                <div class="faq-answer"><p>Delivery time depends on several factors, including the shipment&#x27;s origin and destination, transportation method, cargo type and customs clearance requirements. Contact our team with your shipment details to receive an estimated delivery timeframe.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>How can I contact your customer service department for assistance?</summary>
-                                <div class="faq-answer"><p>You can contact the Bahmas Transportation team for assistance with your shipping and logistics requirements through email or phone. Email: <a href="mailto:info@bahmasqatar.com">info@bahmasqatar.com</a>. Phone: <a href="tel:+97440014111">+974 40014111</a>.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>Do you handle international shipments?</summary>
-                                <div class="faq-answer"><p>Bahmas supports international cargo movement through air and sea freight, along with overland transportation across GCC and other Gulf countries. Contact our team to discuss your route.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-shipping">
-                                <summary>Can your company handle customs clearance for my shipment?</summary>
-                                <div class="faq-answer"><p>Our customs brokerage services support import and export documentation, customs clearance arrangements and cargo handling. Contact our team with your shipment details to discuss the requirements.</p></div>
-                            </details>
+                    <div id="faq-panel-general" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-general">
+                        <h2 class="faq-category-heading">General</h2>
+                        <details class="faq-item" name="faq-general"><summary>What is freight forwarding and how does it work?</summary><div class="faq-answer"><p>Freight forwarding is the coordination and transportation of goods from one location to another using different modes of transport. It involves arranging shipments, coordinating transportation, managing documentation and supporting the movement of cargo.</p></div></details>
+                        <details class="faq-item" name="faq-general"><summary>What services does Bahmas Transportation Services offer?</summary><div class="faq-answer"><p>Bahmas provides air freight, sea freight, overland freight and customs brokerage services. We support businesses with cargo transportation, import and export documentation and logistics coordination.</p></div></details>
+                        <details class="faq-item" name="faq-general"><summary>What types of cargo can Bahmas handle?</summary><div class="faq-answer"><p>Our listed freight services include options for general cargo, oversized and overweight shipments, dangerous goods and temperature-controlled cargo. Suitability depends on the shipment requirements and applicable regulations.</p></div></details>
+                        <details class="faq-item" name="faq-general"><summary>How long does it take for my goods to be delivered?</summary><div class="faq-answer"><p>Delivery time depends on factors such as the destination, transportation mode, shipment details and applicable customs procedures. Contact our team with your shipment requirements to discuss an estimated transit time.</p></div></details>
+                        <details class="faq-item" name="faq-general"><summary>How can I contact Bahmas for assistance?</summary><div class="faq-answer"><p>You can reach out to Bahmas Transportation Services through the <a href="contact/">Contact page</a> or <a href="get-a-quote/">Get a Quote</a> option on our website to discuss your shipping and logistics requirements.</p></div></details>
                     </div>
-                    <div id="faq-panel-support" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-support" hidden>
-                            <details class="faq-item" name="faq-support">
-                                <summary>How do I track my shipment?</summary>
-                                <div class="faq-answer"><p>Contact the Bahmas team with your shipment reference to request an update on your cargo and the available tracking options.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-support">
-                                <summary>How do I know if my shipment requires special handling?</summary>
-                                <div class="faq-answer"><p>Share your cargo type, dimensions, weight and handling requirements with our team so we can discuss suitable transportation and coordination.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-support">
-                                <summary>What happens if my shipment is lost or damaged during transit?</summary>
-                                <div class="faq-answer"><p>Contact our team with your shipment reference and details of the issue. We will help review the shipment information and discuss the next steps.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-support">
-                                <summary>Can your company handle oversized or overweight shipments?</summary>
-                                <div class="faq-answer"><p>Please contact our team with the dimensions, weight, origin and destination of your cargo so we can review the shipment requirements and available options.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-support">
-                                <summary>Do you offer insurance for my shipment?</summary>
-                                <div class="faq-answer"><p>Please ask our team about insurance requirements and available options when discussing your shipment.</p></div>
-                            </details>
+                    <div id="faq-panel-shipment" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-shipment" hidden>
+                        <h2 class="faq-category-heading">Shipment</h2>
+                        <details class="faq-item" name="faq-shipment"><summary>How can I track my shipment?</summary><div class="faq-answer"><p>For information about your shipment&#x27;s progress, contact Bahmas Transportation Services with your shipment details. Our team can assist with the relevant shipment information.</p></div></details>
+                        <details class="faq-item" name="faq-shipment"><summary>Does Bahmas offer cargo insurance?</summary><div class="faq-answer"><p>Bahmas lists cargo insurance as an option within its freight services. Contact our team to discuss available insurance options and coverage requirements for your shipment.</p></div></details>
+                        <details class="faq-item" name="faq-shipment"><summary>How do I know if my shipment requires special handling?</summary><div class="faq-answer"><p>Certain shipments, such as oversized, overweight, dangerous goods or temperature-controlled cargo, may require special handling. Contact our team to discuss your cargo specifications and transportation requirements.</p></div></details>
+                        <details class="faq-item" name="faq-shipment"><summary>What happens if my shipment is lost or damaged during transit?</summary><div class="faq-answer"><p>If your shipment is lost or damaged, contact Bahmas Transportation Services with the shipment details. Our team can help you understand the appropriate next steps and any applicable insurance arrangements.</p></div></details>
+                        <details class="faq-item" name="faq-shipment"><summary>Can Bahmas handle oversized or overweight shipments?</summary><div class="faq-answer"><p>Yes. Bahmas lists oversized and overweight cargo transportation among its air, sea and overland freight service options. Contact our team to discuss your specific shipment requirements.</p></div></details>
+                        <details class="faq-item" name="faq-shipment"><summary>Can Bahmas assist with customs clearance for my shipment?</summary><div class="faq-answer"><p>Bahmas provides customs brokerage support, including assistance with import and export documentation and customs-related coordination.</p></div></details>
                     </div>
-                    <div id="faq-panel-billing" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-billing" hidden>
-                            <details class="faq-item" name="faq-billing">
-                                <summary>How do I get a quote for shipping my goods?</summary>
-                                <div class="faq-answer"><p>Contact us through our <a href="contact/#contact_form">quote enquiry form</a> with your cargo details, origin, destination and preferred transportation method.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-billing">
-                                <summary>What are the payment options for your services?</summary>
-                                <div class="faq-answer"><p>Contact the Bahmas team to confirm the available payment methods and payment terms for your shipment.</p></div>
-                            </details>
-                            <details class="faq-item" name="faq-billing">
-                                <summary>What documents do I need to provide for international shipments?</summary>
-                                <div class="faq-answer"><p>Document requirements depend on the cargo, route and destination. Share your shipment details with our team for guidance on the applicable import, export and customs documentation.</p></div>
-                            </details>
+                    <div id="faq-panel-payment" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-payment" hidden>
+                        <h2 class="faq-category-heading">Payment</h2>
+                        <details class="faq-item" name="faq-payment"><summary>How do I get a quote for shipping my goods?</summary><div class="faq-answer"><p>To request a shipping quote, contact Bahmas Transportation Services through the <a href="get-a-quote/">Get a Quote</a> option on our website. Share your cargo details, destination and transportation requirements so our team can understand your needs and discuss a suitable solution.</p></div></details>
+                        <details class="faq-item" name="faq-payment"><summary>What are the payment options for your services?</summary><div class="faq-answer"><p>For information about accepted payment methods and payment arrangements, please contact Bahmas Transportation Services directly. Our team can provide the relevant payment details for your shipment.</p></div></details>
                     </div>
-                </div>
-            </section>
-
-            <section class="bg-color text-light pt-50 pb-50" aria-labelledby="faq-contact-heading">
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-9">
-                            <h2 id="faq-contact-heading" class="mb-0 fs-32">Still Have Questions? We Are Here to Help.</h2>
-                        </div>
-                        <div class="col-lg-3 text-lg-end">
-                            <a class="btn-main fx-slide btn-line" href="contact/"><span>Contact Us</span></a>
-                        </div>
+                    <div id="faq-panel-international" class="faq-panel" role="tabpanel" aria-labelledby="faq-tab-international" hidden>
+                        <h2 class="faq-category-heading">International</h2>
+                        <details class="faq-item" name="faq-international"><summary>Does Bahmas provide international shipping services?</summary><div class="faq-answer"><p>Yes. Bahmas Transportation Services provides international freight forwarding solutions through air, sea and overland transportation, helping businesses move cargo across international destinations.</p></div></details>
+                        <details class="faq-item" name="faq-international"><summary>What documents do I need to provide for international shipments?</summary><div class="faq-answer"><p>International shipments may require documents such as a commercial invoice, packing list and other applicable shipping or customs documentation. Requirements depend on the cargo, origin and destination country. Contact our team for guidance on your shipment.</p></div></details>
+                        <details class="faq-item" name="faq-international"><summary>Which countries does Bahmas provide freight forwarding services to?</summary><div class="faq-answer"><p>Bahmas Transportation Services has an international logistics network connecting businesses to more than 100 countries. Contact our team to check the available shipping options for your specific destination.</p></div></details>
                     </div>
                 </div>
             </section>
         </main>
-
         <div data-include="components/footer.html"></div>
     </div>
     <script src="js/faq.js"></script>
     <script src="js/components.js"></script>
 </body>
-
 </html>
