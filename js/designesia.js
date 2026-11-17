@@ -1369,12 +1369,12 @@
                  jQuery('header').addClass('menu-open');
                  jQuery('header').css('height',$(window).innerHeight());
                  mobile_menu_show = 1;
-                 jQuery(this).addClass("menu-open");
+                 jQuery(this).addClass("menu-open").attr("aria-expanded", "true");
              } else {
                 jQuery('header').removeClass('menu-open');
                 jQuery('header').css('height','auto');
                  mobile_menu_show = 0;
-                 jQuery(this).removeClass("menu-open");
+                 jQuery(this).removeClass("menu-open").attr("aria-expanded", "false");
              }
          })
 
@@ -1382,7 +1382,7 @@
             jQuery('header').removeClass('menu-open');
             jQuery('header').css('height','auto');
             mobile_menu_show = 0;
-            jQuery('#menu-btn').removeClass("menu-open");
+            jQuery('#menu-btn').removeClass("menu-open").attr("aria-expanded", "false");
          });
 
          jQuery("a.btn").on("click", function(evn) {

@@ -32,7 +32,7 @@ Table of content:
 @import url("../fonts/fontawesome6/css/fontawesome.css");
 @import url("../fonts/fontawesome6/css/brands.css");
 @import url("../fonts/fontawesome6/css/solid.css");
-@import url("../fonts/elegant_font/HTML_CSS/style.css");
+@import url("../fonts/elegent-font/fonts/style.css");
 @import url("../fonts/et-line-font/style.css");
 @import url("../fonts/icofont/icofont.min.css");
 
@@ -1311,6 +1311,74 @@ section.no-bg,
 
 
 /* ================================================== */
+
+/* Shared Bahmas footer, used on the homepage and all inner pages. */
+.bahmas-wordmark { display: inline-flex; flex-direction: column; color: #fff; line-height: 1; white-space: nowrap; }
+.bahmas-wordmark strong { font-size: 34px; letter-spacing: .1em; font-weight: 800; color: var(--primary-color); }
+.bahmas-wordmark small { font-size: 9px; letter-spacing: .19em; margin-top: 7px; font-weight: 600; color: #fff; }
+.bahmas-footer .bahmas-wordmark { margin-bottom: 24px; }
+.bahmas-footer .bahmas-footer-company { font-size: 20px; line-height: 1.5; }
+.bahmas-footer .bahmas-footer-heading { font-size: 18px; line-height: 1.5; margin-bottom: 22px; }
+.bahmas-footer .bahmas-footer-contact { font-style: normal; font-size: 15px; }
+.bahmas-footer .bahmas-footer-contact > div + div { margin-top: 18px; }
+.bahmas-footer .bahmas-footer-label { display: block; color: rgba(255,255,255,.5); font-size: 13px; margin-bottom: 3px; }
+.bahmas-footer .bahmas-footer-contact p { margin: 0; }
+.bahmas-footer a { overflow-wrap: anywhere; }
+.bahmas-footer a:hover { color: var(--primary-color); }
+.bahmas-footer a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+button#menu-btn { border: 0; background: transparent; padding: 0; }
+header #menu-btn { position: relative; }
+header #menu-btn::before {
+  content: "";
+  font-family: inherit;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 8px;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 7px 0 currentColor, 0 14px 0 currentColor;
+}
+header #menu-btn.menu-open::before { top: 15px; box-shadow: none; }
+header:not(.header-mobile) #mainmenu > li.has-child::after {
+  content: "";
+  font-family: inherit;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  margin-left: 8px;
+  transform: rotate(45deg);
+}
+header.header-mobile #mainmenu > li > a.menu-item::after { content: none; }
+header.header-mobile #mainmenu > li.has-child > span,
+header.header-mobile #mainmenu > li.has-child > span.active { background: none; }
+header.header-mobile #mainmenu > li > span::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 12px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+header.header-mobile #mainmenu > li > span.active::before { transform: translateY(4px) rotate(225deg); }
+body #back-to-top::before {
+  content: "";
+  font-family: inherit;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: translateY(5px) rotate(45deg);
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .bahmas-footer > .container { padding-left: 24px; padding-right: 24px; }
+}
 
 footer {
   color: var(--body-font-color-bg-dark);

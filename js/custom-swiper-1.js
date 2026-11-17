@@ -1,4 +1,7 @@
-const swiper = new Swiper('.swiper', {
+(() => {
+  document.querySelectorAll('.swiper').forEach(element => {
+    if (element.swiper) return;
+    new Swiper(element, {
   autoplay: {
     delay: 4000,
     disableOnInteraction: false
@@ -32,3 +35,5 @@ const swiper = new Swiper('.swiper', {
     clickable: false,
   },
 });
+  });
+})();
