@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Bahmas Transportation Services</title>
     <meta name="description" content="Contact Bahmas Transportation Services in Muntazah, Doha, Qatar, to discuss freight forwarding, shipping enquiries and logistics requirements.">
-    <meta name="theme-color" content="#F85C00">
-    <link rel="icon" href="images/icons-color/3.png" type="image/png">
+    <meta name="theme-color" content="#DC0000">
+    <link rel="icon" href="images/logo/logo%20icon.png" type="image/png">
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap">
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/coloring.css" rel="stylesheet">
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet">
     <link href="css/contact.css" rel="stylesheet">
+    <link href="css/motion.css" rel="stylesheet">
+    <script src="js/motion.js" defer></script>
 </head>
 <body class="bahmas-contact-page">
     <div id="wrapper">
@@ -56,8 +58,10 @@
                         <div class="subtitle">SEND US A MESSAGE</div>
                         <h2 id="contact-form-heading">How Can We Help You?</h2>
                         <p>Have a question or need assistance with your shipment? Fill out the form below and share your requirements. Our team will get in touch to discuss your logistics needs.</p>
-                        <!-- Supply a same-origin or CORS-enabled JSON contact endpoint in data-endpoint. Return {"success":true} only after accepting delivery. -->
-                        <form id="contact_form" class="contact-form-card" method="post" data-endpoint="" aria-describedby="contact-required-note">
+                        <form id="contact_form" class="contact-form-card" action="https://api.web3forms.com/submit" method="post" data-endpoint="https://api.web3forms.com/submit" aria-describedby="contact-required-note">
+                            <input type="hidden" name="access_key" value="66e0126d-b026-4766-9cae-5de090641c48">
+                            <input type="hidden" name="from_name" value="Bahmas Transportation Services">
+                            <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" aria-hidden="true">
                             <p id="contact-required-note" class="contact-note">* indicates required fields.</p>
                             <div class="row g-3">
                                 <div class="col-sm-6"><label for="contact-name">Full Name *</label><input class="form-control" type="text" id="contact-name" name="name" autocomplete="name" maxlength="150" required></div>
@@ -92,6 +96,14 @@
         </main>
         <div data-include="components/footer.html"></div>
     </div>
+    <dialog id="contact-success-dialog" class="contact-success-dialog" aria-labelledby="contact-success-heading" aria-describedby="contact-success-message">
+        <div class="contact-success-icon" aria-hidden="true">&#10003;</div>
+        <h2 id="contact-success-heading">Message Sent!</h2>
+        <p id="contact-success-message">Your message has been sent. Thank you for contacting Bahmas Transportation Services.</p>
+        <form method="dialog">
+            <button class="btn-main contact-success-close" type="submit" autofocus>Close</button>
+        </form>
+    </dialog>
     <script src="js/contact.js"></script>
     <script src="js/components.js"></script>
 </body>

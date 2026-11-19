@@ -171,8 +171,8 @@
     flex: 0 0 64px;
     height: 64px;
     border-radius: 16px;
-    background: #101010;
-    color: #fff;
+    background: rgba(var(--primary-color-rgb), .08);
+    color: var(--primary-color);
     font-size: 26px;
 }
 .bahmas-feature p { margin-bottom: 0; }
@@ -305,7 +305,16 @@
     .bahmas-home main > section > .container { padding-right: 24px; padding-left: 24px; }
 }
 @media (max-width: 991px) {
-    .bahmas-hero { margin-top: 100px !important; }
+    .bahmas-home #content { margin-top: 0; }
+    .bahmas-home .bahmas-hero {
+        display: flex;
+        align-items: center;
+        min-height: 100svh;
+        box-sizing: border-box;
+        padding-top: 72px;
+        margin: 0 0 16px !important;
+        border-radius: 0;
+    }
     .bahmas-hero-copy { padding: 70px 0 55px; max-width: 620px; }
     .bahmas-hero-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .bahmas-highlight-card { height: 400px; }
@@ -313,7 +322,7 @@
 }
 @media (max-width: 767px) {
     .bahmas-hero .container { padding-right: 24px; padding-left: 24px; }
-    .bahmas-hero-copy { padding-top: 55px; }
+    .bahmas-hero-copy { padding: 48px 0; }
     .bahmas-hero-copy h1 { font-size: clamp(32px, 7.8vw, 44px); overflow-wrap: break-word; }
     .bahmas-hero-copy .subtitle { font-size: 11px; }
     .bahmas-hero-copy p { font-size: 15px; }

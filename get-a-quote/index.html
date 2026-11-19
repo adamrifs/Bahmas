@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get a Quote | Bahmas Transportation Services</title>
     <meta name="description" content="Request a freight quote from Bahmas Transportation Services for air, sea and overland shipping or customs brokerage. Share your cargo details, origin and destination.">
-    <meta name="theme-color" content="#F85C00">
-    <link rel="icon" href="images/icons-color/3.png" type="image/png">
+    <meta name="theme-color" content="#DC0000">
+    <link rel="icon" href="images/logo/logo%20icon.png" type="image/png">
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap">
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/coloring.css" rel="stylesheet">
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet">
     <link href="css/quote.css" rel="stylesheet">
+    <link href="css/motion.css" rel="stylesheet">
+    <script src="js/motion.js" defer></script>
 </head>
 
 <body class="bahmas-quote-page">
@@ -46,8 +48,11 @@
             <section id="quote-content" class="quote-section quote-form-section" aria-labelledby="quote-form-heading">
                 <div class="container quote-container">
                     <div class="quote-section-heading"><div class="subtitle">SHIPMENT DETAILS</div><h2 id="quote-form-heading">Tell Us About Your Shipment</h2><p>Provide a few details about your cargo and transportation requirements. This will help our team understand your shipment and prepare a suitable quotation.</p></div>
-                    <!-- Configure data-endpoint with the quote-request API. It must return {"success":true} only after accepting the request. -->
-                    <form id="quote_request_form" class="quote-form-card" method="post" data-endpoint="" aria-describedby="quote-required-note">
+                    <form id="quote_request_form" class="quote-form-card" action="https://api.web3forms.com/submit" method="post" data-endpoint="https://api.web3forms.com/submit" aria-describedby="quote-required-note">
+                        <input type="hidden" name="access_key" value="66e0126d-b026-4766-9cae-5de090641c48">
+                        <input type="hidden" name="from_name" value="Bahmas Transportation Services">
+                        <input type="hidden" name="subject" value="New Quote Request - Bahmas Transportation Services">
+                        <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" aria-hidden="true">
                         <p id="quote-required-note" class="quote-required-note">* indicates required fields.</p>
                         <div class="row g-4">
                             <div class="col-md-6"><label for="quote-name">Full Name *</label><input class="form-control" id="quote-name" name="name" type="text" autocomplete="name" maxlength="150" required></div>
@@ -89,6 +94,14 @@
         </main>
         <div data-include="components/footer.html"></div>
     </div>
+    <dialog id="quote-success-dialog" class="quote-success-dialog" aria-labelledby="quote-success-heading" aria-describedby="quote-success-message">
+        <div class="quote-success-icon" aria-hidden="true">&#10003;</div>
+        <h2 id="quote-success-heading">Message Sent!</h2>
+        <p id="quote-success-message">Your quote request has been submitted. Thank you for contacting Bahmas Transportation Services.</p>
+        <form method="dialog">
+            <button class="btn-main quote-success-close" type="submit" autofocus>Close</button>
+        </form>
+    </dialog>
     <script src="js/quote.js"></script>
     <script src="js/components.js"></script>
 </body>

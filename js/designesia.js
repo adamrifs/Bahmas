@@ -659,11 +659,9 @@
              $('.show-on-scroll').addClass('hide');
          }
 
-         $('#back-to-top').on('click', function(e) {
+         $('#back-to-top').off('click.bahmasBackToTop').on('click.bahmasBackToTop', function(e) {
              e.preventDefault();
-             $('html,body').stop(true).animate({
-                 scrollTop: 0
-             }, 700);
+             window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
          });
      };
      /* --------------------------------------------------
@@ -816,14 +814,14 @@
                      $(this).parent().find("ul:first").css("height", "0");
                      $(this).parent().find("ul:first").animate({
                          'height': curHeight
-                     }, 300, 'easeOutQuint');
+                     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300, 'easeOutQuint');
                      break;
                  case 2:
 					var curHeight = $(this).parent().find("ul:first").height();
                      $(this).removeClass("active");
                      $(this).parent().find("ul:first").animate({
                          'height': "0"
-                     }, 300, 'easeOutQuint');
+                     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300, 'easeOutQuint');
                      break;
              }
              iteration++;
@@ -841,13 +839,13 @@
                      $(this).parent().find("ul:first").css("height", "0");
                      $(this).parent().find("ul:first").animate({
                          'height': curHeight
-                     }, 400, 'easeInOutQuint');
+                     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 400, 'easeInOutQuint');
                      break;
                  case 2:
                      $(this).removeClass("active");
                      $(this).parent().find("ul:first").animate({
                          'height': "0"
-                     }, 400, 'easeInOutQuint');
+                     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 400, 'easeInOutQuint');
                      break;
              }
              iteration++;
