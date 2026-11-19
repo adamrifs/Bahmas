@@ -303,7 +303,7 @@ header.smaller {
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: none;*/
+  border: none;
 }
 
 header.header-mobile.header-float .header-inner,

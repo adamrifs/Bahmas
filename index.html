@@ -14,6 +14,7 @@
     <link href="css/coloring.css" rel="stylesheet">
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet">
     <link href="css/faq.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
     <link href="css/motion.css" rel="stylesheet">
     <script src="js/motion.js" defer></script>
@@ -23,6 +24,8 @@
     <a class="bahmas-skip-link" href="#content">Skip to content</a>
     <div id="wrapper">
         <a href="#top" id="back-to-top" aria-label="Back to top"></a>
+        <!-- Horizontal scroll progress bar (bottom of viewport, driven by designesia.js) -->
+        <div class="scrollbar" style="background:var(--primary-color);" aria-hidden="true"></div>
         <div id="de-loader" aria-hidden="true"></div>
         <div data-include="components/navbar.html"></div>
 
@@ -30,9 +33,19 @@
             <div id="top"></div>
 
             <!-- Hero and its five freight highlights -->
-            <section class="bahmas-hero text-light relative rounded-1 overflow-hidden m-3" aria-labelledby="hero-heading">
-                <img class="bahmas-hero-image" src="images/slider/a2.webp" alt="" fetchpriority="high" width="2000" height="1121">
-                <div class="container relative z-2">
+            <section class="bahmas-hero swiper text-light relative rounded-1 overflow-hidden m-3" data-hero-slider aria-labelledby="hero-heading" aria-roledescription="carousel">
+                <div class="swiper-wrapper bahmas-hero-slides" aria-hidden="true" data-scroll-speed="7">
+                    <div class="swiper-slide bahmas-hero-slide" data-slide-name="Sea freight">
+                        <img class="bahmas-hero-image" src="images/slider/a2.webp" alt="" fetchpriority="high" width="2000" height="1121">
+                    </div>
+                    <div class="swiper-slide bahmas-hero-slide" data-slide-name="Overland freight">
+                        <img class="bahmas-hero-image" src="images/slider/a1.webp" alt="" width="2000" height="1121" decoding="async">
+                    </div>
+                    <div class="swiper-slide bahmas-hero-slide bahmas-hero-slide-air" data-slide-name="Air freight">
+                        <img class="bahmas-hero-image" src="images/misc/l1.webp" alt="" width="2000" height="1271" decoding="async">
+                    </div>
+                </div>
+                <div class="container relative z-2 fadeScroll">
                     <div class="bahmas-hero-copy">
                         <div class="subtitle">BAHMAS TRANSPORTATION W.L.L.</div>
                         <h1 id="hero-heading">Moving Cargo.<br>Connecting Opportunities.</h1>
@@ -40,6 +53,13 @@
                         <div class="bahmas-hero-actions">
                             <a class="btn-main fx-slide" href="services/"><span>Explore Services</span></a>
                             <a class="btn-main btn-line fx-slide" href="get-a-quote/"><span>Get a Quote</span></a>
+                        </div>
+                        <div class="bahmas-hero-controls" role="group" aria-label="Landing slideshow controls" hidden>
+                            <button class="bahmas-hero-prev" type="button" aria-label="Previous image"><span aria-hidden="true">&larr;</span></button>
+                            <div class="bahmas-hero-pagination"></div>
+                            <button class="bahmas-hero-next" type="button" aria-label="Next image"><span aria-hidden="true">&rarr;</span></button>
+                            <button class="bahmas-hero-pause" type="button" aria-label="Pause slideshow" aria-pressed="false"><span aria-hidden="true">&#10074;&#10074;</span></button>
+                            <span class="bahmas-hero-status visually-hidden" role="status" aria-live="polite"></span>
                         </div>
                     </div>
                     <ul class="bahmas-hero-highlights">
@@ -285,7 +305,7 @@
                 </div>
             </section>
             <section id="get-a-quote" class="bahmas-quote-cta text-light rounded-1 overflow-hidden m-3" aria-labelledby="quote-heading">
-                <img class="bahmas-quote-image" src="images/slider/a1.webp" alt="" width="2000" height="1121" loading="lazy">
+                <img class="bahmas-quote-image" src="images/slider/a1.webp" alt="" width="2000" height="1121" loading="lazy" data-scroll-speed="9">
                 <div class="container bahmas-quote-container">
                     <div class="bahmas-quote-copy">
                         <div class="subtitle">LET'S MOVE YOUR CARGO</div>

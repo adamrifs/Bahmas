@@ -42,7 +42,8 @@
             'js/designesia.js',
             'js/swiper.js',
             'js/custom-swiper-1.js',
-            'js/custom-marquee.js'
+            'js/custom-marquee.js',
+            'js/scroll.js'
         ]) {
             await loadScript(path);
         }

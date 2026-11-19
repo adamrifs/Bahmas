@@ -3,8 +3,45 @@
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body .motion-pending { opacity: 0; }
 
+/* ── Scroll-progress bar (horizontal, bottom of viewport) ─────
+   The div.scrollbar element width is driven by designesia.js.   */
+body div.scrollbar {
+    background: var(--primary-color) !important;
+    height: 3px;
+    z-index: 10001;
+}
+
+/* ── Smooth header transitions ─────────────────────────────── */
 body header {
-    transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+    transition: background-color 280ms ease, border-color 280ms ease,
+                box-shadow 280ms ease, padding 280ms ease, margin 280ms ease;
+}
+
+/* ── Desktop sticky header: scroll-light variant ───────────────
+   designesia.js adds .smaller at scrollY > 0 (desktop ≥ 993px).
+   .scroll-light on the header gives: white bg + dark nav links. */
+header.smaller.scroll-light {
+    box-shadow: 0 2px 24px rgba(16, 24, 32, .10);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Keep the logo area vertically centred when the top margin collapses */
+header.smaller .de-flex.sm-pt10 {
+    padding-top: 0 !important;
+    min-height: 70px;
+    align-items: center;
+}
+
+/* Logo images – scale down slightly when header shrinks */
+header.smaller .bahmas-brand-icon { width: 32px !important; }
+header.smaller .bahmas-brand-name { width: 120px !important; }
+
+/* ── Back-to-top smooth motion ──────────────────────────────── */
+#back-to-top {
+    transition: opacity 240ms ease, transform 280ms var(--motion-ease),
+                bottom 280ms var(--motion-ease), background-color 200ms ease !important;
 }
 body :is(a, button, summary, [role="button"]):focus-visible {
     outline: 3px solid var(--primary-color);
