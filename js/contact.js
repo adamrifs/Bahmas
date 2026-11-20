@@ -3,6 +3,8 @@
     if (!form) return;
     const button = form.querySelector('[type="submit"]');
     const status = document.getElementById('contact-form-status');
+    const successDialog = document.getElementById('contact-success-dialog');
+    successDialog.addEventListener('close', () => button.focus());
     const showStatus = (message, state) => { status.textContent = message; status.dataset.state = state; };
     form.addEventListener('input', event => { event.target.setCustomValidity?.(''); });
     form.addEventListener('submit', async event => {
@@ -27,7 +29,8 @@
             const result = await response.json();
             if (result.success !== true) throw new Error('Delivery was not confirmed');
             form.reset();
-            showStatus('Your message has been sent. Thank you for contacting Bahmas Transportation Services.', 'success');
+            showStatus('', 'success');
+            successDialog.showModal();
         } catch {
             showStatus('Your message could not be sent. Please try again, call +974 40014111 or email info@bhamasqatar.com.', 'error');
         } finally {

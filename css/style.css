@@ -113,7 +113,7 @@ Table of content:
   --container-max-width:1240px;
   /* button */
   --btn-color: #fff;
-  --btn-hover-bg: var(--bg-dark-1);
+  --btn-hover-bg: var(--primary-color-hover);
   --btn-font-family: var(--body-font);
   --btn-font-size: 15px;
   --btn-font-weight: bold;
@@ -303,7 +303,7 @@ header.smaller {
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: none;*/
+  border: none;
 }
 
 header.header-mobile.header-float .header-inner,
@@ -1313,16 +1313,25 @@ section.no-bg,
 /* ================================================== */
 
 /* Shared Bahmas footer, used on the homepage and all inner pages. */
+.bahmas-brand { display: inline-flex; align-items: center; gap: 0; max-width: 100%; vertical-align: middle; }
+.bahmas-brand img { display: block; object-fit: contain; }
+.bahmas-brand .bahmas-brand-icon { width: 80px; height: auto; flex-shrink: 0; transform: translateY(-10px); }
+.bahmas-brand .bahmas-brand-name { width: 216px; min-width: 0; height: auto; }
+.bahmas-footer .bahmas-brand { margin-bottom: 28px; }
+@media (max-width: 575px) {
+  .bahmas-brand .bahmas-brand-icon { width: 56px; transform: translateY(-6px); }
+  .bahmas-brand .bahmas-brand-name { width: 164px; }
+}
 .bahmas-wordmark { display: inline-flex; flex-direction: column; color: #fff; line-height: 1; white-space: nowrap; }
 .bahmas-wordmark strong { font-size: 34px; letter-spacing: .1em; font-weight: 800; color: var(--primary-color); }
 .bahmas-wordmark small { font-size: 9px; letter-spacing: .19em; margin-top: 7px; font-weight: 600; color: #fff; }
-footer.bahmas-footer { padding: 0; border-top: 3px solid var(--primary-color); background: radial-gradient(ellipse at 0 0, rgba(248,92,0,.075), transparent 50%), #101820; color: #b7c0c9; }
+footer.bahmas-footer { padding: 0; border-top: 3px solid var(--primary-color); background: radial-gradient(ellipse at 0 0, rgba(var(--primary-color-rgb),.075), transparent 50%), #101820; color: #b7c0c9; }
 .bahmas-footer > .container { padding-top: clamp(56px, 6vw, 88px); }
-.bahmas-footer .bahmas-contact { padding: 50px 0; margin: 0; background: var(--primary-color); }
+.bahmas-footer .bahmas-contact { padding: 50px 0; margin: 0; background: linear-gradient(110deg, #850000 0%, var(--primary-color) 55%, #f02b2b 100%); }
 .bahmas-footer .bahmas-contact > .container { max-width: 1440px; min-width: 0; padding-left: 24px; padding-right: 24px; }
 .bahmas-footer .bahmas-contact h2 { font-size: clamp(26px, 2.4vw, 32px); line-height: 1.35; color: #fff; margin: 0; }
-.bahmas-footer .bahmas-contact .btn-main { color: #fff; border-color: #fff; padding: 8px 26px; min-height: 44px; }
-.bahmas-footer .bahmas-contact .btn-main:hover { background: #fff; color: #181d24; }
+.bahmas-footer .bahmas-contact .btn-main { background: #fff; color: var(--primary-color); border-color: #fff; padding: 8px 26px; min-height: 44px; }
+.bahmas-footer .bahmas-contact .btn-main:hover { background: var(--primary-color-hover); color: #fff; }
 .bahmas-footer > .container, .bahmas-footer .subfooter > .container { max-width: 1440px; min-width: 0; padding-left: 24px; padding-right: 24px; }
 .bahmas-footer-grid { display: grid; grid-template-columns: 1.3fr .7fr .9fr 1.2fr; gap: clamp(28px, 3vw, 48px); }
 .bahmas-footer-grid > * { min-width: 0; }
@@ -1340,13 +1349,13 @@ footer.bahmas-footer { padding: 0; border-top: 3px solid var(--primary-color); b
 .bahmas-footer-links a span { margin-left: 6px; color: var(--primary-color); }
 .bahmas-footer-social-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; color: #dbe1e7; margin-bottom: 12px; }
 .bahmas-footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
-.bahmas-footer .bahmas-footer-social-icon { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid #3c4650; border-radius: 50%; background: rgba(255,255,255,.04); color: #fff; font-size: 20px; transition: background .2s, border-color .2s, transform .2s; }
-.bahmas-footer-social-icon:hover { background: var(--primary-color); border-color: var(--primary-color); transform: translateY(-3px); }
+.bahmas-footer .bahmas-footer-social-icon { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid rgba(var(--primary-color-rgb), .4); border-radius: 50%; background: rgba(var(--primary-color-rgb), .1); color: var(--primary-color); font-size: 20px; transition: background .2s, border-color .2s, transform .2s; }
+.bahmas-footer .bahmas-footer-social-icon:hover { background: var(--primary-color); border-color: var(--primary-color); color: #fff; transform: translateY(-3px); }
 .bahmas-footer .bahmas-footer-contact { font-style: normal; font-size: 14px; line-height: 1.8; margin: 0; }
 .bahmas-footer-contact-item { display: flex; align-items: flex-start; gap: 14px; }
 .bahmas-footer-contact-item > div { min-width: 0; }
 .bahmas-footer-contact-item + .bahmas-footer-contact-item { margin-top: 22px; }
-.bahmas-footer-contact-icon { flex: 0 0 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: rgba(248,92,0,.1); color: var(--primary-color); font-size: 15px; }
+.bahmas-footer-contact-icon { flex: 0 0 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: rgba(var(--primary-color-rgb),.1); color: var(--primary-color); font-size: 15px; }
 .bahmas-footer .bahmas-footer-label { display: block; color: #8996a3; font-size: 12px; margin-bottom: 4px; }
 .bahmas-footer .bahmas-footer-contact p { margin: 0; }
 .bahmas-footer .bahmas-footer-contact a { color: #dbe1e7; }
@@ -1362,7 +1371,7 @@ footer.bahmas-footer { padding: 0; border-top: 3px solid var(--primary-color); b
 @media (max-width: 1199px) { .bahmas-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; } }
 @media (max-width: 575px) { .bahmas-footer-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; } .bahmas-footer-bottom { flex-direction: column; text-align: center; } }
 @media (prefers-reduced-motion: reduce) { .bahmas-footer-social-icon { transition: none; } .bahmas-footer-social-icon:hover { transform: none; } }
-button#menu-btn { border: 0; background: transparent; padding: 0; }
+header button#menu-btn { color: var(--primary-color); border: 0; background: transparent; padding: 0; }
 header #menu-btn { position: relative; }
 header #menu-btn::before {
   content: "";
@@ -13596,5 +13605,66 @@ img {
     left: 33%;
     margin-left: auto;
     width: auto;
+  }
+}
+
+/* Shared brand color for outlined action buttons. */
+body a.btn-main.btn-line { background: var(--primary-color); border-color: var(--primary-color); color: #fff; }
+body a.btn-main.btn-line:hover { background: var(--primary-color-hover); border-color: var(--primary-color-hover); color: #fff; }
+
+/* Keep content images within their columns; background images retain their section sizing. */
+#content img { max-width: 100%; }
+
+/* Translucent charcoal mobile navigation. */
+@media (max-width: 993px) {
+  header.header-mobile {
+    min-height: 72px;
+    padding: 0;
+    background: rgba(16, 24, 32, .72);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .12);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  header.header-mobile:not(.menu-open) { height: 72px !important; }
+  header.header-mobile .de-flex.sm-pt10 {
+    min-height: 70px;
+    padding-top: 0;
+    align-items: center;
+  }
+  header.header-mobile .bahmas-brand .bahmas-brand-icon {
+    width: 40px;
+    transform: translateY(-4px);
+  }
+  header.header-mobile .bahmas-brand .bahmas-brand-name { width: 140px; }
+  header.header-mobile #mainmenu {
+    top: 72px;
+    margin-top: 0;
+    height: calc(100dvh - 72px);
+    padding-bottom: 24px !important;
+  }
+  .bahmas-home header.header-mobile:not(.is-scrolled):not(.menu-open) {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  header.header-mobile.menu-open {
+    background: linear-gradient(160deg, rgba(16, 24, 32, .84), rgba(16, 24, 32, .68));
+  }
+  header.header-mobile #mainmenu li {
+    border-bottom-color: rgba(255, 255, 255, .16);
+  }
+  header.header-mobile #mainmenu li a {
+    color: #fff;
+  }
+  header.header-mobile #mainmenu li a:hover,
+  header.header-mobile #mainmenu li:hover > a.menu-item {
+    color: #fff;
+    background: rgba(var(--primary-color-rgb), .2);
+  }
+  header.header-mobile #mainmenu > li > span::before {
+    border-color: var(--primary-color);
   }
 }

@@ -5,7 +5,7 @@
 .bahmas-quote-page .quote-container { max-width: 1400px; min-width: 0; padding-left: 24px; padding-right: 24px; }
 .bahmas-quote-page .quote-section h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.2; margin-bottom: 24px; overflow-wrap: break-word; }
 .bahmas-quote-page .quote-section p { font-size: 16px; line-height: 1.85; }
-.quote-intro-image { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; }
+.quote-intro-image { display: block; width: 100%; height: auto; max-height: min(600px, 75svh); aspect-ratio: 1.15; object-fit: cover; }
 .quote-section-heading { max-width: 850px; text-align: center; margin: 0 auto 44px; }
 .quote-section-heading p { margin-bottom: 0; }
 .quote-form-section { background: #f8f9fa; }
@@ -15,14 +15,21 @@
 #quote_request_form .form-control { min-height: 48px; padding: 11px 13px; border: 1px solid #d5dbe1; background-color: #fff; color: #181d24; font-size: 16px; }
 #quote_request_form .input-group .form-control { min-width: 0; }
 #quote_request_form textarea { resize: vertical; }
-.bahmas-quote-page .quote-submit { min-height: 48px; padding: 12px 28px; margin-top: 28px; border: 0; background: #1765a0; }
+.bahmas-quote-page .quote-submit { min-height: 48px; padding: 12px 28px; margin-top: 28px; border: 0; background: var(--primary-color); }
 .quote-submit:disabled { opacity: .65; cursor: wait; }
 .bahmas-quote-page .quote-status { margin: 16px 0 0; font-size: 14px; }
 .quote-status[data-state="error"] { color: #9d2424; }
 .quote-status[data-state="success"] { color: #176038; }
+.quote-success-dialog { width: min(440px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; box-sizing: border-box; margin: auto; padding: 36px 28px; border: 0; border-radius: 20px; background: #fff; color: #35404e; text-align: center; box-shadow: 0 24px 80px rgba(14,42,66,.25); }
+.quote-success-dialog::backdrop { background: rgba(14, 30, 46, .6); }
+.quote-success-icon { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 20px; border-radius: 50%; background: rgba(var(--primary-color-rgb), .08); color: var(--primary-color); font-size: 36px; }
+.quote-success-dialog h2 { margin: 0 0 12px; color: #181d24; font-size: 30px; font-weight: 400; line-height: 1.25; letter-spacing: -1px; }
+.quote-success-dialog p { margin: 0 0 24px; font-size: 16px; line-height: 1.7; }
+.bahmas-quote-page .quote-success-close { min-width: 105px; min-height: 56px; padding: 16px 32px; border: 0; border-radius: 999px; background: var(--primary-color); color: #fff; font-size: 14px; font-weight: 600; line-height: 24px; }
+.bahmas-quote-page .quote-success-close:hover { background: var(--primary-color-hover); }
 .quote-process { background: #edf5fb; }
 .quote-process-card { height: 100%; padding: 32px 28px; border-radius: 16px; background: #fff; border: 1px solid #e1e9f0; box-shadow: 0 6px 20px rgba(14,42,66,.04); }
-.quote-process-card i { font-size: 34px; color: #1765a0; margin-bottom: 24px; display: inline-block; }
+.quote-process-card i { font-size: 34px; color: var(--primary-color); margin-bottom: 24px; display: inline-block; }
 .quote-process-card h3 { font-size: 23px; line-height: 1.4; margin-bottom: 16px; }
 .quote-process-card p { margin-bottom: 0; }
 .quote-support { position: relative; text-align: center; background: #0b2038; }
@@ -31,9 +38,11 @@
 .quote-support::before { content: ''; z-index: 1; background: rgba(5,25,48,.85); }
 .quote-support > .container { position: relative; z-index: 2; }
 .quote-support p { max-width: 800px; margin: 0 auto 28px; color: rgba(255,255,255,.9); }
-.bahmas-quote-page .quote-support .btn-main { min-height: 48px; padding: 12px 30px; background: #1765a0; }
+.bahmas-quote-page .quote-support .btn-main { min-height: 48px; padding: 12px 30px; background: var(--primary-color); }
 .bahmas-quote-page :is(a, button, input, select, textarea):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
 .quote-skip-link { position: fixed; top: 12px; left: 12px; z-index: 10000; padding: 12px 20px; border-radius: 8px; background: #fff; color: #181d24; transform: translateY(-160%); }
 .quote-skip-link:focus { transform: translateY(0); }
-@media(max-width:991px) { .quote-intro-image { aspect-ratio: 16 / 10; max-height: 480px; } }
+@media(max-width:991px) { .quote-intro-image { aspect-ratio: 16 / 10; max-height: min(500px, 75svh); } }
 @media(max-width:575px) { .quote-process-card { padding: 24px; } .quote-section-heading { margin-bottom: 32px; } }
+
+.bahmas-quote-page .quote-submit:hover { background: var(--primary-color-hover); }

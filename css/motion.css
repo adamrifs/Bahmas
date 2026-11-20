@@ -1,0 +1,233 @@
+/* One motion language across the site; layout and brand colors live in the page styles. */
+:root { --motion-ease: cubic-bezier(.2, .7, .2, 1); }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body .motion-pending { opacity: 0; }
+
+/* ── Scroll-progress bar (horizontal, bottom of viewport) ─────
+   The div.scrollbar element width is driven by designesia.js.   */
+body div.scrollbar {
+    background: var(--primary-color) !important;
+    height: 3px;
+    z-index: 10001;
+}
+
+/* ── Smooth header transitions ─────────────────────────────── */
+body header {
+    transition: background-color 280ms ease, border-color 280ms ease,
+                box-shadow 280ms ease, padding 280ms ease, margin 280ms ease;
+}
+
+/* ── Desktop sticky header: scroll-light variant ───────────────
+   designesia.js adds .smaller at scrollY > 0 (desktop ≥ 993px).
+   .scroll-light on the header gives: white bg + dark nav links. */
+header.smaller.scroll-light {
+    box-shadow: 0 2px 24px rgba(16, 24, 32, .10);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Keep the logo area vertically centred when the top margin collapses */
+header.smaller .de-flex.sm-pt10 {
+    padding-top: 0 !important;
+    min-height: 70px;
+    align-items: center;
+}
+
+/* Logo images – scale down slightly when header shrinks */
+header.smaller .bahmas-brand-icon { width: 32px !important; }
+header.smaller .bahmas-brand-name { width: 120px !important; }
+
+/* ── Back-to-top smooth motion ──────────────────────────────── */
+#back-to-top {
+    transition: opacity 240ms ease, transform 280ms var(--motion-ease),
+                bottom 280ms var(--motion-ease), background-color 200ms ease !important;
+}
+body :is(a, button, summary, [role="button"]):focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+}
+header #mainmenu :is(a, [role="button"]):focus-visible,
+body #content .form-control:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+}
+body .btn-main {
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease,
+                box-shadow 250ms ease, transform 250ms var(--motion-ease);
+}
+body .btn-main:not(:disabled):active { transform: translateY(1px) scale(.98); }
+body .btn-main:disabled { transform: none; }
+body .btn-main.fx-slide > span,
+body .btn-main.fx-slide::before { transition-duration: 280ms; }
+
+:is(.contact-form-card, .quote-form-card) .form-control {
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+body :is(.contact-form-card, .quote-form-card) .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), .1);
+}
+form[aria-busy="true"] .btn-main[type="submit"]::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    vertical-align: -2px;
+    border: 2px solid rgba(255, 255, 255, .35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: bahmas-spin 700ms linear infinite;
+}
+
+:is(.about-expertise-card, .about-benefit-card, .about-purpose-card,
+    .team-highlight-card, .team-approach-card, .air-service-card,
+    .contact-info-card, .quote-process-card) {
+    transition: transform 320ms var(--motion-ease), box-shadow 320ms ease, border-color 250ms ease;
+}
+:is(.about-expertise-card, .team-approach-card) > img {
+    transition: transform 650ms var(--motion-ease);
+}
+body .hover :is(.hover-scale-1-1, .hover-scale-1-2) {
+    transition: transform 800ms var(--motion-ease);
+}
+.bahmas-service-card :is(h3, .bahmas-read-arrow),
+.bahmas-feature-icon, .bahmas-highlight-copy {
+    transition: color 240ms ease, background-color 240ms ease, transform 320ms var(--motion-ease);
+}
+.bahmas-read-arrow { display: inline-block; transition: transform 250ms var(--motion-ease); }
+.bahmas-service-card:focus-visible .bahmas-read-arrow,
+.bahmas-read-more:focus-visible .bahmas-read-arrow { transform: translateX(5px); }
+.bahmas-service-card:focus-visible h3 { color: var(--primary-color); }
+
+.faq-tabs button { transition: color 180ms ease, background-color 180ms ease, box-shadow 200ms ease; }
+.faq-item summary { transition: color 180ms ease; }
+.faq-item[open] summary { color: var(--primary-color); }
+.faq-panel:not([hidden]) { animation: bahmas-panel-in 280ms var(--motion-ease) both; }
+
+:is(.contact-success-dialog, .quote-success-dialog)[open] {
+    animation: bahmas-dialog-in 320ms var(--motion-ease) both;
+}
+:is(.contact-success-dialog, .quote-success-dialog)[open]::backdrop {
+    animation: bahmas-backdrop-in 240ms ease both;
+}
+:is(.contact-success-dialog, .quote-success-dialog)[open] [class$="success-icon"] {
+    animation: bahmas-icon-in 440ms 100ms var(--motion-ease) both;
+}
+body #back-to-top { transition: opacity 220ms ease, transform 250ms var(--motion-ease), background-color 200ms ease; }
+
+@media (hover: hover) and (pointer: fine) {
+    body .btn-main:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(var(--primary-color-rgb), .18);
+    }
+    body .hover:hover :is(.hover-scale-1-1, .hover-scale-1-2) { transform: scale(1.05); }
+    :is(.about-expertise-card, .about-benefit-card, .about-purpose-card,
+        .team-highlight-card, .team-approach-card, .air-service-card,
+        .contact-info-card, .quote-process-card):hover {
+        transform: translateY(-6px);
+        border-color: rgba(var(--primary-color-rgb), .3);
+        box-shadow: 0 14px 32px rgba(16, 24, 32, .09);
+    }
+    :is(.about-expertise-card, .team-approach-card):hover > img { transform: scale(1.04); }
+    .bahmas-highlight-card:hover .bahmas-highlight-copy { transform: translateY(-6px); }
+    .bahmas-service-card:hover h3 { color: var(--primary-color); }
+    :is(.bahmas-service-card, .bahmas-read-more):hover .bahmas-read-arrow { transform: translateX(5px); }
+    .bahmas-feature:hover .bahmas-feature-icon {
+        transform: translateY(-3px);
+        background-color: rgba(var(--primary-color-rgb), .14);
+    }
+    body #back-to-top:hover { transform: translateY(-3px); background: var(--primary-color-hover); }
+}
+
+@media (hover: none) {
+    body .hover:hover :is(.hover-scale-1-1, .hover-scale-1-2) { transform: none; }
+}
+
+@media (min-width: 994px) {
+    header:not(.header-mobile) #mainmenu > li > ul {
+        transform: translateY(8px);
+        transition: opacity 200ms ease, transform 250ms var(--motion-ease), visibility 200ms ease;
+    }
+    header:not(.header-mobile) #mainmenu > li:is(:hover, :focus-within) > ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    header:not(.header-mobile) #mainmenu > li > a.menu-item {
+        text-underline-offset: 7px;
+        text-decoration-color: transparent;
+        transition: color 200ms ease, text-decoration-color 200ms ease;
+    }
+    header:not(.header-mobile) #mainmenu > li > a.menu-item:is(:hover, :focus-visible) {
+        text-decoration-line: underline;
+        text-decoration-color: var(--primary-color);
+    }
+}
+
+@media (max-width: 993px) {
+    html { scroll-padding-top: 88px; }
+    /* The desktop auto-hide offset must not move the mobile menu off-screen. */
+    body header.header-mobile { margin-top: 0 !important; }
+    header.header-mobile.menu-open #mainmenu > li {
+        animation: bahmas-menu-in 320ms var(--motion-ease) both;
+    }
+    header.header-mobile.menu-open #mainmenu > li:nth-child(2) { animation-delay: 35ms; }
+    header.header-mobile.menu-open #mainmenu > li:nth-child(3) { animation-delay: 70ms; }
+    header.header-mobile.menu-open #mainmenu > li:nth-child(4) { animation-delay: 105ms; }
+    header.header-mobile.menu-open #mainmenu > li:nth-child(5) { animation-delay: 140ms; }
+    header #menu-btn::before, header #menu-btn::after {
+        transition: transform 220ms var(--motion-ease), top 220ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    }
+    header #menu-btn::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        top: 15px;
+        height: 2px;
+        background: currentColor;
+        opacity: 0;
+    }
+    header #menu-btn.menu-open::before {
+        content: "";
+        top: 15px;
+        box-shadow: none;
+        transform: rotate(45deg);
+    }
+    header #menu-btn.menu-open::after { opacity: 1; transform: rotate(-45deg); }
+    header.header-mobile #mainmenu > li > span::before {
+        transition: transform 220ms var(--motion-ease);
+    }
+    /* Touch interaction uses a press response rather than a persistent image zoom. */
+    body .hover:hover :is(.hover-scale-1-1, .hover-scale-1-2) { transform: none; }
+    .bahmas-highlight-card:active { opacity: .92; }
+}
+
+@keyframes bahmas-menu-in { from { opacity: 0; translate: 0 -8px; } to { opacity: 1; translate: 0 0; } }
+@keyframes bahmas-panel-in { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@keyframes bahmas-dialog-in { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes bahmas-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bahmas-icon-in { from { opacity: 0; transform: scale(.75); } to { opacity: 1; transform: scale(1); } }
+@keyframes bahmas-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    body *, body *::before, body *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+    body .motion-pending { opacity: 1; }
+    body .btn-main.fx-slide:hover > span { transform: none; opacity: 1; }
+    body .btn-main.fx-slide:hover::before { opacity: 0; }
+    body .btn-main:is(:hover, :active),
+    body .hover:hover :is(.hover-scale-1-1, .hover-scale-1-2),
+    :is(.about-expertise-card, .about-benefit-card, .about-purpose-card,
+        .team-highlight-card, .team-approach-card, .air-service-card,
+        .contact-info-card, .quote-process-card):hover,
+    :is(.about-expertise-card, .team-approach-card):hover > img,
+    .bahmas-highlight-card:hover .bahmas-highlight-copy,
+    .bahmas-feature:hover .bahmas-feature-icon { transform: none; }
+}

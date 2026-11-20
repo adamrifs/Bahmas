@@ -6,12 +6,12 @@
 .bahmas-team-page .team-section p { font-size: 16px; line-height: 1.85; }
 .bahmas-team-page .subtitle { font-size: 13px; letter-spacing: .1em; }
 .bahmas-team-page #subheader .crumb { justify-content: center; }
-.team-intro-image { display: block; width: 100%; aspect-ratio: 1.1; object-fit: cover; }
+.team-intro-image { display: block; width: 100%; height: auto; max-height: min(600px, 75svh); aspect-ratio: 1.1; object-fit: cover; }
 .team-section-heading { max-width: 850px; text-align: center; margin: 0 auto 44px; }
 .team-section-heading p { margin-bottom: 0; }
 .team-highlights { background: #edf5fb; }
 .team-highlight-card { height: 100%; padding: 32px 24px; background: #fff; border: 1px solid #e1e9f0; border-radius: 16px; box-shadow: 0 6px 20px rgba(14, 42, 66, .04); text-align: center; }
-.team-highlight-card i { display: inline-block; font-size: 34px; color: #1765a0; margin-bottom: 24px; }
+.team-highlight-card i { display: inline-block; font-size: 34px; color: var(--primary-color); margin-bottom: 24px; }
 .team-section h3 { font-size: 23px; line-height: 1.4; margin-bottom: 14px; }
 .team-highlight-card h3 { font-size: 21px; }
 .bahmas-team-page .team-highlight-card p { font-size: 15px; }
@@ -27,11 +27,11 @@
 .team-cta::before { content: ''; z-index: 1; background: rgba(5, 25, 48, .85); }
 .team-cta > .container { position: relative; z-index: 2; }
 .team-cta p { max-width: 800px; margin: 0 auto 28px; color: rgba(255,255,255,.9); }
-.bahmas-team-page .team-cta .btn-main { min-height: 48px; padding: 12px 30px; background: #1765a0; }
-.bahmas-team-page .team-cta .btn-main:hover { background: #114c79; }
+.bahmas-team-page .team-cta .btn-main { min-height: 48px; padding: 12px 30px; background: var(--primary-color); }
+.bahmas-team-page .team-cta .btn-main:hover { background: var(--primary-color-hover); }
 .bahmas-team-page :is(a, button):focus-visible { outline: 3px solid var(--primary-color); outline-offset: 4px; }
 @media (max-width: 991px) {
-    .team-intro-image { aspect-ratio: 16 / 10; max-height: 480px; }
+    .team-intro-image { aspect-ratio: 16 / 10; max-height: min(500px, 75svh); }
 }
 @media (max-width: 575px) {
     .team-highlight-card, .team-approach-copy { padding: 24px; }

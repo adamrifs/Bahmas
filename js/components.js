@@ -26,13 +26,24 @@
     try {
         const componentElements = document.querySelectorAll('[data-include]');
         await Promise.all(Array.from(componentElements, includeComponent));
+        document.dispatchEvent(new Event('bahmas:components-ready'));
+
+        const header = document.querySelector('header');
+        if (header) {
+            const updateHeaderBackground = () => {
+                header.classList.toggle('is-scrolled', window.scrollY > 20);
+            };
+            updateHeaderBackground();
+            window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+        }
 
         for (const path of [
             'js/plugins.js',
             'js/designesia.js',
             'js/swiper.js',
             'js/custom-swiper-1.js',
-            'js/custom-marquee.js'
+            'js/custom-marquee.js',
+            'js/scroll.js'
         ]) {
             await loadScript(path);
         }
@@ -40,6 +51,7 @@
         if (document.readyState === 'complete') {
             window.dispatchEvent(new Event('load'));
         }
+        document.dispatchEvent(new Event('bahmas:ready'));
     } catch (error) {
         console.error('Unable to initialize shared page components.', error);
     }

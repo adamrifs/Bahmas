@@ -3,6 +3,8 @@
     if (!form) return;
     const button = form.querySelector('[type="submit"]');
     const status = document.getElementById('quote-form-status');
+    const successDialog = document.getElementById('quote-success-dialog');
+    successDialog.addEventListener('close', () => button.focus());
     const showStatus = (message, state) => { status.textContent = message; status.dataset.state = state; };
     form.addEventListener('input', event => { event.target.setCustomValidity?.(''); });
     form.addEventListener('submit', async event => {
@@ -27,7 +29,8 @@
             const result = await response.json();
             if (result.success !== true) throw new Error('Delivery was not confirmed');
             form.reset();
-            showStatus('Your quote request has been submitted. Thank you for contacting Bahmas Transportation Services.', 'success');
+            showStatus('', 'success');
+            successDialog.showModal();
         } catch {
             showStatus('Your quote request could not be submitted. Please try again or contact our team for assistance.', 'error');
         } finally {
