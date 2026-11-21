@@ -22,7 +22,7 @@
     if (reduced.matches) return;
 
     const targets = [
-      { sel: '.bahmas-hero-slides',  speed: 0.25 },
+      { sel: '.bahmas-hero-image',   speed: 0.25 },
       { sel: '.bahmas-quote-image',  speed: 0.20 },
     ];
 

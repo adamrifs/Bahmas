@@ -2,13 +2,13 @@
   const hero = document.querySelector('[data-hero-slider]');
   if (hero && !hero.swiper) {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const paginationEl = hero.querySelector('.bahmas-hero-pagination');
     const controls = hero.querySelector('.bahmas-hero-controls');
-    const pause = controls.querySelector('.bahmas-hero-pause');
-    const status = controls.querySelector('.bahmas-hero-status');
+    const pause  = controls ? controls.querySelector('.bahmas-hero-pause')  : null;
+    const status = hero.querySelector('.bahmas-hero-status');
     const names = [...hero.querySelectorAll('[data-slide-name]')].map(slide => slide.dataset.slideName);
     let userPaused = preference.matches;
     let focused = false;
-    let hovered = false;
     let visible = true;
     const slider = new Swiper(hero, {
       loop: true,
@@ -18,54 +18,68 @@
       touchEventsTarget: 'container',
       autoplay: { delay: 5500, disableOnInteraction: false },
       noSwipingSelector: 'a, button, input, select, textarea',
-      navigation: { prevEl: controls.querySelector('.bahmas-hero-prev'), nextEl: controls.querySelector('.bahmas-hero-next') },
-      pagination: {
-        el: controls.querySelector('.bahmas-hero-pagination'),
+      navigation: controls ? {
+        prevEl: controls.querySelector('.bahmas-hero-prev'),
+        nextEl: controls.querySelector('.bahmas-hero-next')
+      } : false,
+      pagination: paginationEl ? {
+        el: paginationEl,
         clickable: true,
         renderBullet: (index, className) => `<button type="button" class="${className}" aria-label="Show ${names[index].toLowerCase()} image"></button>`
-      },
+      } : false,
       // The images are decorative; the custom status announces only manual changes.
       a11y: { enabled: false }
     });
-    controls.hidden = false;
+    if (controls) controls.hidden = false;
 
     function sync() {
-      if (!userPaused && !focused && !hovered && visible && !document.hidden) slider.autoplay.start();
+      if (!userPaused && !focused && visible && !document.hidden) slider.autoplay.start();
       else slider.autoplay.stop();
-      pause.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
-      pause.setAttribute('aria-pressed', String(userPaused));
-      pause.firstElementChild.textContent = userPaused ? '\u25b6' : '\u275a\u275a';
+      if (pause) {
+        pause.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
+        pause.setAttribute('aria-pressed', String(userPaused));
+        pause.firstElementChild.textContent = userPaused ? '\u25b6' : '\u275a\u275a';
+      }
     }
     function updateCurrent() {
-      controls.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
+      const bullets = (paginationEl || controls)?.querySelectorAll('.swiper-pagination-bullet');
+      bullets?.forEach((bullet, index) => {
         if (index === slider.realIndex) bullet.setAttribute('aria-current', 'true');
         else bullet.removeAttribute('aria-current');
       });
     }
     slider.on('slideChange', updateCurrent);
     updateCurrent();
-    pause.addEventListener('click', () => {
-      userPaused = !userPaused;
-      // An explicit Play action can resume while the control still has focus.
-      if (!userPaused) { focused = false; hovered = false; }
-      sync();
-      status.textContent = userPaused ? 'Slideshow paused.' : 'Slideshow playing.';
-    });
-    controls.addEventListener('click', event => {
-      if (!event.target.closest('button') || event.target.closest('.bahmas-hero-pause')) return;
-      status.textContent = `${names[slider.realIndex]}, image ${slider.realIndex + 1} of ${names.length}.`;
-    });
-    controls.addEventListener('keydown', event => {
-      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      event.preventDefault();
-      if (event.key === 'ArrowLeft') slider.slidePrev();
-      else slider.slideNext();
-      status.textContent = `${names[slider.realIndex]}, image ${slider.realIndex + 1} of ${names.length}.`;
-    });
+    if (pause) {
+      pause.addEventListener('click', () => {
+        userPaused = !userPaused;
+        // An explicit Play action can resume while the control still has focus.
+        if (!userPaused) { focused = false; hovered = false; }
+        sync();
+        if (status) status.textContent = userPaused ? 'Slideshow paused.' : 'Slideshow playing.';
+      });
+    }
+    if (paginationEl) {
+      paginationEl.addEventListener('click', event => {
+        if (!event.target.closest('button')) return;
+        if (status) status.textContent = `${names[slider.realIndex]}, image ${slider.realIndex + 1} of ${names.length}.`;
+      });
+    }
+    if (controls) {
+      controls.addEventListener('click', event => {
+        if (!event.target.closest('button') || event.target.closest('.bahmas-hero-pause')) return;
+        if (status) status.textContent = `${names[slider.realIndex]}, image ${slider.realIndex + 1} of ${names.length}.`;
+      });
+      controls.addEventListener('keydown', event => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        if (event.key === 'ArrowLeft') slider.slidePrev();
+        else slider.slideNext();
+        if (status) status.textContent = `${names[slider.realIndex]}, image ${slider.realIndex + 1} of ${names.length}.`;
+      });
+    }
     hero.addEventListener('focusin', () => { focused = true; sync(); });
     hero.addEventListener('focusout', () => requestAnimationFrame(() => { focused = hero.contains(document.activeElement); sync(); }));
-    hero.addEventListener('pointerenter', event => { hovered = event.pointerType === 'mouse'; sync(); });
-    hero.addEventListener('pointerleave', () => { hovered = false; sync(); });
     document.addEventListener('visibilitychange', sync);
     preference.addEventListener('change', () => {
       slider.params.speed = preference.matches ? 0 : 900;

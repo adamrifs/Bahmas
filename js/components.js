@@ -37,14 +37,23 @@
             window.addEventListener('scroll', updateHeaderBackground, { passive: true });
         }
 
-        for (const path of [
+        const scriptsToLoad = [
             'js/plugins.js',
             'js/designesia.js',
-            'js/swiper.js',
-            'js/custom-swiper-1.js',
-            'js/custom-marquee.js',
             'js/scroll.js'
-        ]) {
+        ];
+
+        // Only load Swiper slider scripts on pages that actually feature a swiper slider
+        if (document.querySelector('.swiper')) {
+            scriptsToLoad.push('js/swiper.js', 'js/custom-swiper-1.js');
+        }
+
+        // Only load Marquee script if page has marquee elements
+        if (document.querySelector('.de-marquee-list-1, .de-marquee-list-2, .de-marquee-list')) {
+            scriptsToLoad.push('js/custom-marquee.js');
+        }
+
+        for (const path of scriptsToLoad) {
             await loadScript(path);
         }
 

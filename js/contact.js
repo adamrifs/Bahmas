@@ -40,4 +40,30 @@
             form.removeAttribute('aria-busy');
         }
     });
+
+    // Preload the map in the background without blocking initial page presentation
+    const mapIframe = document.querySelector('.contact-map[data-src]');
+    if (mapIframe) {
+        let loaded = false;
+        const loadMap = () => {
+            if (loaded) return;
+            loaded = true;
+            if (mapIframe.dataset.src) {
+                mapIframe.src = mapIframe.dataset.src;
+                mapIframe.removeAttribute('data-src');
+            }
+        };
+
+        // Start loading the map as soon as the main thread is idle or after a short delay
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadMap, { timeout: 1000 });
+        } else {
+            setTimeout(loadMap, 500);
+        }
+
+        // Or load immediately on first user scroll / pointer movement
+        window.addEventListener('scroll', loadMap, { once: true, passive: true });
+        window.addEventListener('pointermove', loadMap, { once: true, passive: true });
+        window.addEventListener('touchstart', loadMap, { once: true, passive: true });
+    }
 })();

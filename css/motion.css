@@ -17,14 +17,23 @@ body header {
                 box-shadow 280ms ease, padding 280ms ease, margin 280ms ease;
 }
 
-/* ── Desktop sticky header: scroll-light variant ───────────────
-   designesia.js adds .smaller at scrollY > 0 (desktop ≥ 993px).
-   .scroll-light on the header gives: white bg + dark nav links. */
-header.smaller.scroll-light {
-    box-shadow: 0 2px 24px rgba(16, 24, 32, .10);
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
+/* ── Desktop header: keep transparent on scroll, no white background ── */
+@media (min-width: 992px) {
+    header.transparent,
+    header.transparent.smaller,
+    header.header-static,
+    header.header-static.smaller,
+    header.smaller.scroll-light {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    header.transparent #mainmenu > li > a,
+    header.transparent.smaller #mainmenu > li > a,
+    header.header-static #mainmenu > li > a,
+    header.header-static.smaller #mainmenu > li > a,
+    header.smaller.scroll-light #mainmenu > li > a {
+        color: #ffffff !important;
+    }
 }
 
 /* Keep the logo area vertically centred when the top margin collapses */

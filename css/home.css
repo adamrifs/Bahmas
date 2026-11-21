@@ -1,20 +1,30 @@
 /* Homepage additions to the existing LogiXpress theme. */
-.bahmas-home #content { color: #62666c; }
+.bahmas-home #content { color: #62666c; overflow: hidden; }
 .bahmas-section-heading { margin-bottom: 44px; }
 .bahmas-section-heading p { margin-bottom: 0; }
 .bahmas-home .subtitle { font-size: 14px; letter-spacing: .1em; }
 
-.bahmas-hero { padding: 0; background: #101820; }
+.bahmas-hero {
+    position: relative;
+    padding: 0;
+    background: #101820;
+    margin: 16px auto !important;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+    border-radius: var(--rounded-1, 20px) !important;
+    overflow: hidden;
+}
 .bahmas-hero-image, .bahmas-hero::before {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
-.bahmas-hero-image { object-fit: cover; object-position: 65% center; }
+.bahmas-hero-image { object-fit: cover; object-position: center center; }
 .bahmas-home .bahmas-hero-slides { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .bahmas-hero-slide { height: 100%; }
-.bahmas-hero-slide-air .bahmas-hero-image { object-position: center; }
+.bahmas-hero-slide-air .bahmas-hero-image { object-position: center center; }
 .bahmas-hero:not(.swiper-initialized) .bahmas-hero-slide:not(:first-child) { visibility: hidden; }
 .bahmas-hero-controls { display: flex; align-items: center; gap: 8px; margin-top: 24px; }
 .bahmas-hero-controls[hidden] { display: none; }
@@ -26,7 +36,7 @@
 }
 .bahmas-hero-controls > button:hover { background: var(--primary-color); border-color: var(--primary-color); }
 .bahmas-hero-controls .bahmas-hero-pause { font-size: 13px; }
-.bahmas-hero-pagination { position: static; display: flex; align-items: center; width: auto; }
+.bahmas-hero-pagination { position: static; display: flex; align-items: center; width: auto; margin-top: 24px; }
 .bahmas-hero-pagination .swiper-pagination-bullet {
     display: grid; place-items: center; width: 30px; height: 44px; margin: 0 !important;
     padding: 0; border: 0; border-radius: 0; background: transparent; opacity: 1;
@@ -39,21 +49,49 @@
 .bahmas-hero::before {
     content: "";
     z-index: 1;
-    background: linear-gradient(90deg, rgba(9,18,27,.75), rgba(9,18,27,.12)),
-                linear-gradient(0deg, rgba(9,18,27,.9), transparent 55%);
+    /* Even dark overlay — readable from all sides */
+    background: rgba(4, 10, 18, .52);
 }
-.bahmas-hero-copy { padding: 195px 0 85px; max-width: 780px; }
+/* ── Hero copy: bottom-left anchored ── */
+.bahmas-hero-copy {
+    padding: 160px 0 72px;
+    max-width: 820px;
+    text-align: left;
+}
+/* Subtitle: small label above the h1 — desktop only */
+.bahmas-hero-copy .subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 18px;
+}
+.bahmas-hero-copy .subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--primary-color, #DC0000);
+    flex-shrink: 0;
+}
 .bahmas-hero-copy h1 {
-    font-size: clamp(44px, 4.5vw, 68px);
-    line-height: 1.12;
-    margin-bottom: 26px;
+    font-size: clamp(44px, 5vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    margin-bottom: 22px;
+    text-align: left;
 }
 .bahmas-hero-copy p {
-    max-width: 570px;
-    font-size: 17px;
+    max-width: 540px;
+    font-size: 16px;
     line-height: 1.8;
-    color: rgba(255,255,255,.88);
-    margin-bottom: 30px;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 36px;
+    text-align: left;
 }
 .bahmas-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .bahmas-home .btn-main { padding: 10px 28px; }
@@ -265,14 +303,38 @@
 .bahmas-home-faq-more { margin-top: 32px; text-align: center; }
 
 .bahmas-home #get-a-quote { padding: clamp(64px, 7vw, 112px) 0; }
-.bahmas-quote-cta { position: relative; background: #101820; }
+.bahmas-quote-cta {
+    position: relative;
+    background: #101820;
+    margin: 16px auto !important;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    border-radius: var(--rounded-1, 20px) !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 .bahmas-quote-image, .bahmas-quote-cta::before {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
-.bahmas-quote-image { object-fit: cover; object-position: 65% center; }
+.bahmas-quote-image { object-fit: cover; object-position: center center; }
+
+.bahmas-highlights-strip {
+    margin: 0 auto 16px !important;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.bahmas-highlights-strip .container-fluid {
+    padding: 0 !important;
+}
+.bahmas-highlights-strip .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 .bahmas-quote-cta::before {
     content: "";
     z-index: 1;
@@ -333,24 +395,47 @@
     .bahmas-home .bahmas-hero {
         display: flex;
         align-items: center;
-        min-height: 100svh;
+        justify-content: center;
+        min-height: calc(100svh - 32px);
+        margin: 16px auto !important;
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        border-radius: var(--rounded-1, 20px) !important;
         box-sizing: border-box;
-        padding-top: 72px;
-        margin: 0 0 16px !important;
-        border-radius: 0;
+        padding-top: 0;
     }
-    .bahmas-hero-copy { padding: 70px 0 55px; max-width: 620px; }
+    .bahmas-home .bahmas-hero .container { width: 100%; }
+    .bahmas-hero-copy { padding: 80px 0; max-width: 100%; }
     .bahmas-hero-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .bahmas-highlight-card { height: 400px; }
     .bahmas-home section:not(.bahmas-hero):not(.p-0) { padding: 70px 0; }
 }
 @media (max-width: 767px) {
     .bahmas-hero .container { padding-right: 24px; padding-left: 24px; }
-    .bahmas-hero-copy { padding: 48px 0; }
-    .bahmas-hero-copy h1 { font-size: clamp(32px, 7.8vw, 44px); overflow-wrap: break-word; }
-    .bahmas-hero-copy .subtitle { font-size: 11px; }
-    .bahmas-hero-copy p { font-size: 15px; }
-    .bahmas-hero-actions .btn-main { padding: 10px 20px; font-size: 14px; }
+    .bahmas-hero-copy { padding: 72px 0 60px; }
+    /* Subtitle shown on mobile too */
+    .bahmas-hero-copy .subtitle {
+        display: inline-flex;
+        font-size: 10px;
+        letter-spacing: .15em;
+        margin-bottom: 16px;
+    }
+    .bahmas-hero-copy .subtitle::before { width: 20px; }
+    .bahmas-hero-copy h1 {
+        font-size: clamp(36px, 10vw, 52px);
+        line-height: 1.07;
+        letter-spacing: -.025em;
+        overflow-wrap: break-word;
+        margin-bottom: 18px;
+    }
+    .bahmas-hero-copy p {
+        font-size: 13px;
+        line-height: 1.75;
+        margin-bottom: 32px;
+        color: rgba(255,255,255,.70);
+        max-width: 100%;
+    }
+    .bahmas-hero-actions .btn-main { padding: 12px 26px; font-size: 14px; }
     .bahmas-hero-highlights { display: none; }
     .bahmas-highlight-card { height: 380px; }
     .bahmas-section-heading h2 { font-size: 34px; }
@@ -362,6 +447,24 @@
     .bahmas-quote-cta::before { background: rgba(9, 18, 27, .78); }
 }
 @media (max-width: 575px) {
+    .bahmas-home .bahmas-hero {
+        min-height: calc(100svh - 24px);
+        margin: 12px auto !important;
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
+        border-radius: 16px !important;
+    }
+    .bahmas-highlights-strip {
+        margin: 0 auto 12px !important;
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
+    }
+    .bahmas-quote-cta {
+        margin: 12px auto !important;
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
+        border-radius: 16px !important;
+    }
     .bahmas-why .bahmas-feature { flex-direction: column; }
     .bahmas-why .bahmas-feature-icon { width: 64px; }
 }
